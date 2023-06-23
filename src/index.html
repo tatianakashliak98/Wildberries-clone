@@ -6,115 +6,129 @@
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>Wildberries clone</title>
    <link rel="stylesheet" href="./style.css">
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@100;300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
-   <header></header>
-   <section></section>
-   <main>
-      <div class="mainHeader">Хиты продаж</div>
-      <div class="mainCards">
-         <div class="card">
-            <div class="cardPicture">
-               <button type="button" class ="viewCardBtn">Быстрый просмотр</button>
-               <div class="discountAndBasket">
-                  <div class="discount">-10%</div>
-                  <button type="button" class="btnBasket"></button>
-               </div>
-            </div>
-            <div class="cardDescription">
-               <div class="cardPrice">
-                  <p class="newPrice">900p</p>
-                  <p style="text-decoration: line-through;">1000p</p>
-               </div>
-               <div class="cardName">Штаны</div>
-            </div>
-         </div>
-         <div class="card">
-            <div class="cardPicture">
-               <button type="button" class ="viewCardBtn">Быстрый просмотр</button>
-               <div class="discountAndBasket">
-                  <div class="discount">-10%</div>
-                  <button type="button" class="btnBasket"></button>
-               </div>
-            </div>
-            <div class="cardDescription">
-               <div class="cardPrice">
-                  <p class="newPrice">900p</p>
-                  <p style="text-decoration: line-through;">1000p</p>
-               </div>
-               <div class="cardName">Штаны</div>
-            </div>
-         </div>
-         <div class="card">
-            <div class="cardPicture">
-               <button type="button" class ="viewCardBtn">Быстрый просмотр</button>
-               <div class="discountAndBasket">
-                  <div class="discount">-10%</div>
-                  <button type="button" class="btnBasket"></button>
-               </div>
-            </div>
-            <div class="cardDescription">
-               <div class="cardPrice">
-                  <p class="newPrice">900p</p>
-                  <p style="text-decoration: line-through;">1000p</p>
-               </div>
-               <div class="cardName">Штаны</div>
-            </div>
-         </div>
-         <div class="card">
-            <div class="cardPicture">
-               <button type="button" class ="viewCardBtn">Быстрый просмотр</button>
-               <div class="discountAndBasket">
-                  <div class="discount">-10%</div>
-                  <button type="button" class="btnBasket"></button>
-               </div>
-            </div>
-            <div class="cardDescription">
-               <div class="cardPrice">
-                  <p class="newPrice">900p</p>
-                  <p style="text-decoration: line-through;">1000p</p>
-               </div>
-               <div class="cardName">Штаны</div>
-            </div>
-         </div>
-         <div class="card">
-            <div class="cardPicture">
-               <button type="button"class ="viewCardBtn">Быстрый просмотр</button>
-               <div class="discountAndBasket">
-                  <div class="discount">-10%</div>
-                  <button type="button" class="btnBasket"></button>
-               </div>
-            </div>
-            <div class="cardDescription">
-               <div class="cardPrice">
-                  <p class="newPrice">900p</p>
-                  <p style="text-decoration: line-through;">1000p</p>
-               </div>
-               <div class="cardName">Штаны</div>
-            </div>
-         </div>
-         <div class="card">
-            <div class="cardPicture">
-               <button type="button" class ="viewCardBtn">Быстрый просмотр</button>
-               <div class="discountAndBasket">
-                  <div class="discount">-10%</div>
-                  <button type="button" class="btnBasket"></button>
-               </div>
-            </div>
-            <div class="cardDescription">
-               <div class="cardPrice">
-                  <p class="newPrice">900p</p>
-                  <p style="text-decoration: line-through;">1000p</p>
-               </div>
-               <div class="cardName">Штаны</div>
-            </div>
+   <div class="wrapper">
+
+      <header class="header">
+         <a href="/" class="header__logo">Wildberries</a>
+
+         <div class="header__search-box">
+            <input type="text" class="header__searchbar" maxlength= "36" placeholder="Поиск…">
+            <input type="image" class="header__search-btn" name="image" src="https://images-na.ssl-images-amazon.com/images/I/41gYkruZM2L.png">
          </div>
 
+         <div class="header__basket">
+            <button class="header__basket-btn" id="header__basket-btn">Корзина</button>
+         </div>
+      </header> <!-- header -->
 
-      </div>
 
-
-   </main>
+      <main>
+         <div class="mainHeader">Хиты продаж</div>
+         <div class="mainCards">
+            <div class="card">
+               <div class="cardPicture">
+                  <button type="button" class ="viewCardBtn">Быстрый просмотр</button>
+                  <div class="discountAndBasket">
+                     <div class="discount">-10%</div>
+                     <button type="button" class="btnBasket"></button>
+                  </div>
+               </div>
+               <div class="cardDescription">
+                  <div class="cardPrice">
+                     <p class="newPrice">900p</p>
+                     <p style="text-decoration: line-through;">1000p</p>
+                  </div>
+                  <div class="cardName">Штаны</div>
+               </div>
+            </div>
+            <div class="card">
+               <div class="cardPicture">
+                  <button type="button" class ="viewCardBtn">Быстрый просмотр</button>
+                  <div class="discountAndBasket">
+                     <div class="discount">-10%</div>
+                     <button type="button" class="btnBasket"></button>
+                  </div>
+               </div>
+               <div class="cardDescription">
+                  <div class="cardPrice">
+                     <p class="newPrice">900p</p>
+                     <p style="text-decoration: line-through;">1000p</p>
+                  </div>
+                  <div class="cardName">Штаны</div>
+               </div>
+            </div>
+            <div class="card">
+               <div class="cardPicture">
+                  <button type="button" class ="viewCardBtn">Быстрый просмотр</button>
+                  <div class="discountAndBasket">
+                     <div class="discount">-10%</div>
+                     <button type="button" class="btnBasket"></button>
+                  </div>
+               </div>
+               <div class="cardDescription">
+                  <div class="cardPrice">
+                     <p class="newPrice">900p</p>
+                     <p style="text-decoration: line-through;">1000p</p>
+                  </div>
+                  <div class="cardName">Штаны</div>
+               </div>
+            </div>
+            <div class="card">
+               <div class="cardPicture">
+                  <button type="button" class ="viewCardBtn">Быстрый просмотр</button>
+                  <div class="discountAndBasket">
+                     <div class="discount">-10%</div>
+                     <button type="button" class="btnBasket"></button>
+                  </div>
+               </div>
+               <div class="cardDescription">
+                  <div class="cardPrice">
+                     <p class="newPrice">900p</p>
+                     <p style="text-decoration: line-through;">1000p</p>
+                  </div>
+                  <div class="cardName">Штаны</div>
+               </div>
+            </div>
+            <div class="card">
+               <div class="cardPicture">
+                  <button type="button"class ="viewCardBtn">Быстрый просмотр</button>
+                  <div class="discountAndBasket">
+                     <div class="discount">-10%</div>
+                     <button type="button" class="btnBasket"></button>
+                  </div>
+               </div>
+               <div class="cardDescription">
+                  <div class="cardPrice">
+                     <p class="newPrice">900p</p>
+                     <p style="text-decoration: line-through;">1000p</p>
+                  </div>
+                  <div class="cardName">Штаны</div>
+               </div>
+            </div>
+            <div class="card">
+               <div class="cardPicture">
+                  <button type="button" class ="viewCardBtn">Быстрый просмотр</button>
+                  <div class="discountAndBasket">
+                     <div class="discount">-10%</div>
+                     <button type="button" class="btnBasket"></button>
+                  </div>
+               </div>
+               <div class="cardDescription">
+                  <div class="cardPrice">
+                     <p class="newPrice">900p</p>
+                     <p style="text-decoration: line-through;">1000p</p>
+                  </div>
+                  <div class="cardName">Штаны</div>
+               </div>
+            </div>
+         </div>
+      </main>
+   </div> <!-- wrapper -->
    <script type="module" src="script.js"></script>
 </body>
 </html>
