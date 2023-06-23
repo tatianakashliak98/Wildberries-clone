@@ -1,0 +1,25 @@
+
+.swiper-container{
+    width: 100%;  
+}
+.slide-image{
+    text-align: center;
+}
+.slide-image img{   
+    border-radius: 10px;
+    width: 80%;
+    object-fit: cover;
+}
+.swiper-scrollbar-drag{
+    cursor: pointer;
+    background-color: blueviolet;
+}
+
+.swiper-horizontal>.swiper-scrollbar, 
+.swiper-scrollbar.swiper-scrollbar-horizontal{
+    position: relative;
+    margin-top: 20px;
+}
+.swiper-button-next, .swiper-button-prev {
+    top: var(--swiper-navigation-top-offset,40%)
+}
