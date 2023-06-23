@@ -1,5 +1,119 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    outline: none;
+    border: none;
+}
 
-.swiper-container{
+body {
+    width: 100%;
+    font-family: 'Montserrat Alternates', sans-serif;
+}
+
+.wrapper {
+    max-width: 90%;
+    margin: 0 auto;
+}
+
+.header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 30px 50px;
+} 
+
+.header__logo {
+    font-size: 25px;
+    font-weight: bold;
+    border-radius: 20px;
+    align-items: center;
+    cursor: pointer;
+    background: linear-gradient(90deg, rgb(171, 99, 201), rgb(65, 10, 80));
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+
+.header__search-box {
+    position: relative;
+    margin: 0 auto;
+    width: 65%;
+}
+  
+
+.header__searchbar {
+    width: 100%;
+    height: 70px;
+    border: 1px solid black;
+    border-radius: 20px;
+    padding: 10px 10px 10px 30px;
+}
+
+.header__searchbar:hover {
+    height: 72px;
+    transition: .1s;
+    box-shadow: 2px 5px 5px rgba(83, 83, 83, 0.262);
+}
+
+.header__search-btn {
+    height: 30px;
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    transition: all .1s;
+}
+
+.header__search-btn:hover {
+    cursor: pointer;
+    right: 30px;
+}
+
+
+.header__searchbar:hover + .header__search-btn {
+    right: 30px;
+}
+
+.header__searchbar::placeholder {
+    opacity: .3;
+    font-size: 20px;
+    text-align: center;
+}
+
+input[type="text"] {
+    font-size: 20px;
+}
+
+:focus::-webkit-input-placeholder {
+    color: transparent;
+}
+
+.header__basket-btn {
+    padding: 25px 40px;
+    font-size: 17px;
+    font-weight: 300;
+    color: #fff;
+    position: relative;
+    border-radius: 20px;
+    cursor: pointer;
+    font-family: 'Montserrat Alternates', sans-serif;
+    background: linear-gradient(90deg, rgb(160, 95, 188), rgb(100, 17, 123));
+
+}
+
+.header__basket-btn:hover {
+    font-weight: 600;
+    box-shadow: 2px 5px 5px rgba(83, 83, 83, 0.262);
+}
+
+.header__basket-btn:active {
+    background: rgb(100, 17, 123);
+  
+  .swiper-container{
     width: 100%;  
 }
 .slide-image{
