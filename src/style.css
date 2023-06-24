@@ -7,19 +7,22 @@
 }
 .slide-image img{   
     border-radius: 10px;
-    width: 80%;
+    width: 100%;
     object-fit: cover;
 }
-.swiper-scrollbar-drag{
-    cursor: pointer;
-    background-color: blueviolet;
+.swiper-button-next:after,
+.swiper-button-prev:after{
+    color: antiquewhite;
 }
-
-.swiper-horizontal>.swiper-scrollbar, 
-.swiper-scrollbar.swiper-scrollbar-horizontal{
+.swiper-pagination{
     position: relative;
     margin-top: 20px;
+    transform: translateY(50%);
 }
-.swiper-button-next, .swiper-button-prev {
-    top: var(--swiper-navigation-top-offset,40%)
+.swiper-pagination-bullet{
+    width: 15px;
+    height: 15px;
+    line-height: 15px;
+    font-size: 14px;
+    background-color: blueviolet;
 }

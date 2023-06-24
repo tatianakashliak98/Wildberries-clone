@@ -6,8 +6,9 @@ let swiper = new Swiper('.swiper-container',{
         prevEl:'.swiper-button-prev',
     },
     slidesPerView:1,
-    scrollbar:{
-        el:'.swiper-scrollbar',
-        draggable:true,
+    pagination:{
+        el:'.swiper-pagination',
+        clicable:true,
+        dynamicBullets:true,
     },
 });
