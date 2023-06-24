@@ -7,8 +7,31 @@
    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
    <title>Wildberries clone</title>
    <link rel="stylesheet" href="./style.css">
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@100;300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
+   <div class="wrapper">
+
+      <container class="header">
+         <a href="/" class="header__logo">Wildberries</a>
+
+         <div class="header__search-box">
+            <input type="text" class="header__searchbar" maxlength= "36" placeholder="Поиск…">
+            <input type="image" class="header__search-btn" name="image" src="https://images-na.ssl-images-amazon.com/images/I/41gYkruZM2L.png">
+         </div>
+
+         <div class="header__basket">
+            <button class="header__basket-btn" id="header__basket-btn">Корзина</button>
+         </div>
+      </container> <!-- header -->
+
+   </div> <!-- wrapper -->
+
+
+
+
    <div class="swiper-container">
       <div class="swiper-wrapper">
          
@@ -36,6 +59,8 @@
    
    
    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+
+
    <script type="module" src="script.js"></script>
    
 </body>
