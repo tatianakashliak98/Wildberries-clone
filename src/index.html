@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
     <title>Wildberries clone</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -22,6 +23,37 @@
            <button class="header__basket-btn" id="header__basket-btn">Корзина</button>
         </div>
          </header>
+      
+       <div class="swiper-container">
+         <div class="swiper-wrapper">
+            
+            <div class="swiper-slide">
+               <div class="slide-image">
+                  <img src="/src/img/slider1.jpg" alt="slider1">
+               </div>
+            </div>
+            
+            <div class="swiper-slide">
+               <div class="slide-image">
+                  <img src="/src/img/slider2.jpg" alt="slider2">
+               </div>
+            </div>
+            <div class="swiper-slide">
+               <div class="slide-image">
+                  <img src="/src/img/slider3.jpg" alt="slider3">
+               </div>
+            </div>
+            <div class="swiper-slide">
+               <div class="slide-image">
+                  <img src="/src/img/slider4.jpg" alt="slider4">
+               </div>
+            </div>
+            
+         </div>
+         <div class="swiper-button-next"></div>
+         <div class="swiper-button-prev"></div>
+         <div class="swiper-pagination"></div>
+      </div>
       <main>
         <div class="main__header">Хиты продаж</div>
         <div class="main__cards">
@@ -148,6 +180,8 @@
         </div>
       </main>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
     <script type="module" src="script.js"></script>
   </body>
 </html>
+
