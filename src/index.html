@@ -1,35 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-   <meta charset="UTF-8">
-   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
-   <title>Wildberries clone</title>
-   <link rel="stylesheet" href="./style.css">
-   <link rel="preconnect" href="https://fonts.googleapis.com">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
+    <title>Wildberries clone</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
    <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@100;300;400;600&display=swap" rel="stylesheet">
-</head>
-<body>
-   <div class="wrapper">
-
-      <container class="header">
-         <a href="/" class="header__logo">Wildberries</a>
-
-         <div class="header__search-box">
-            <input type="text" class="header__searchbar" maxlength= "36" placeholder="Поиск…">
-            <input type="image" class="header__search-btn" name="image" src="https://images-na.ssl-images-amazon.com/images/I/41gYkruZM2L.png">
-         </div>
-
-         <div class="header__basket">
-            <button class="header__basket-btn" id="header__basket-btn">Корзина</button>
-         </div>
-      </container> <!-- header -->
-
-
-
-      <div class="swiper-container">
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <a href="/" class="header__logo">Wildberries</a>
+        <div class="header__search-box">
+           <input type="text" class="header__searchbar" maxlength= "36" placeholder="Поиск…">
+           <input type="image" class="header__search-btn" name="image" src="https://images-na.ssl-images-amazon.com/images/I/41gYkruZM2L.png">
+        </div>
+        <div class="header__basket">
+           <button class="header__basket-btn" id="header__basket-btn">Корзина</button>
+        </div>
+         </header>
+      
+       <div class="swiper-container">
          <div class="swiper-wrapper">
             
             <div class="swiper-slide">
@@ -59,13 +54,134 @@
          <div class="swiper-button-prev"></div>
          <div class="swiper-pagination"></div>
       </div>
-      
-   </div> <!-- wrapper -->
-
- 
-   
-   <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
-   <script type="module" src="script.js"></script>
-   
-</body>
+      <main>
+        <div class="main__header">Хиты продаж</div>
+        <div class="main__cards">
+          <div class="card">
+            <div class="card__picture">
+              <div class="view__container">
+                <button type="button" class="view__card-btn">
+                  Быстрый просмотр
+                </button>
+              </div>
+              <div class="discount__and__basket">
+                <div class="discount">-10%</div>
+                <button type="button" class="btn-basket"></button>
+              </div>
+            </div>
+            <div class="card__description">
+              <div class="card__price">
+                <p class="new__price">900p</p>
+                <p style="text-decoration: line-through">1000p</p>
+              </div>
+              <div class="card__name">Штаны</div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card__picture">
+              <div class="view__container">
+                <button type="button" class="view__card-btn">
+                  Быстрый просмотр
+                </button>
+              </div>
+              <div class="discount__and__basket">
+                <div class="discount">-10%</div>
+                <button type="button" class="btn-basket"></button>
+              </div>
+            </div>
+            <div class="card__description">
+              <div class="card__price">
+                <p class="new__price">900p</p>
+                <p style="text-decoration: line-through">1000p</p>
+              </div>
+              <div class="card__name">Штаны</div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card__picture">
+              <div class="view__container">
+                <button type="button" class="view__card-btn">
+                  Быстрый просмотр
+                </button>
+              </div>
+              <div class="discount__and__basket">
+                <div class="discount">-10%</div>
+                <button type="button" class="btn-basket"></button>
+              </div>
+            </div>
+            <div class="card__description">
+              <div class="card__price">
+                <p class="new__price">900p</p>
+                <p style="text-decoration: line-through">1000p</p>
+              </div>
+              <div class="card__name">Штаны</div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card__picture">
+              <div class="view__container">
+                <button type="button" class="view__card-btn">
+                  Быстрый просмотр
+                </button>
+              </div>
+              <div class="discount__and__basket">
+                <div class="discount">-10%</div>
+                <button type="button" class="btn-basket"></button>
+              </div>
+            </div>
+            <div class="card__description">
+              <div class="card__price">
+                <p class="new__price">900p</p>
+                <p style="text-decoration: line-through">1000p</p>
+              </div>
+              <div class="card__name">Штаны</div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card__picture">
+              <div class="view__container">
+                <button type="button" class="view__card-btn">
+                  Быстрый просмотр
+                </button>
+              </div>
+              <div class="discount__and__basket">
+                <div class="discount">-10%</div>
+                <button type="button" class="btn-basket"></button>
+              </div>
+            </div>
+            <div class="card__description">
+              <div class="card__price">
+                <p class="new__price">900p</p>
+                <p style="text-decoration: line-through">1000p</p>
+              </div>
+              <div class="card__name">Штаны</div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card__picture">
+              <div class="view__container">
+                <button type="button" class="view__card-btn">
+                  Быстрый просмотр
+                </button>
+              </div>
+              <div class="discount__and__basket">
+                <div class="discount">-10%</div>
+                <button type="button" class="btn-basket"></button>
+              </div>
+            </div>
+            <div class="card__description">
+              <div class="card__price">
+                <p class="new__price">900p</p>
+                <p style="text-decoration: line-through">1000p</p>
+              </div>
+              <div class="card__name">Штаны</div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <script type="module" src="script.js"></script>
+  </body>
 </html>
+
