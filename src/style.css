@@ -118,7 +118,7 @@ input[type="text"] {
 }
 
 
-.main_cards {
+.main__cards {
   max-width: 100%;
   display: flex;
   justify-content: flex-start;
@@ -134,13 +134,13 @@ main {
   padding: 20px;
 }
 
-.main_header {
+.main__header {
   margin: 20px 20px 50px 160px;
   font-size: 24px;
   font-weight: 600;
 }
 
-.card_picture {
+.card__picture {
   position: relative;
   border-radius: 20px;
   max-width: 80%;
@@ -154,22 +154,25 @@ main {
   padding: 5px;
 }
 
-.discount_and_basket {
+.discount__and__basket {
   margin: 0 10px;
   display: flex;
   justify-content: space-between;
   align-items: end;
 }
-.discount, .new_price {
+.discount, .new__price {
   font-size: 18px ;
   font-weight: 700;
 } 
 
 .discount {
   color: #fff;
+  font-family: 'Montserrat Alternates', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
 }
 
-.view_container {
+.view__container {
   position: absolute;
   top: 0%;
   left: 0%;
@@ -178,15 +181,17 @@ main {
   opacity: 0;
   transition: opacity 0.4s ease;
 }
-.view_container:hover {
+.view__container:hover {
   opacity:1;
   cursor: pointer;
   transition-delay: 0.2s;
 }
-.view_card_btn {
+.view__card-btn {
   border: none;
   background: linear-gradient(90deg, rgb(160, 95, 188), rgba(100, 17, 123, 0.417));
   color: #fff;
+  font-family: 'Montserrat Alternates', sans-serif;
+  font-size: 13px;
   border-radius: 5px;
   width: 150px;
   height: 30px;
@@ -194,7 +199,7 @@ main {
   margin-left: 8%;
 }
 
-.btn_basket {
+.btn-basket {
   width: 25px;
   height: 25px;
   border-radius: 50%;
@@ -203,18 +208,18 @@ main {
   background-color:  rgba(100, 17, 123, 0.417);
 }
 
-.card_price {
+.card__price {
   display: flex;
   justify-content: space-around;
   margin: 20px 0;
 }
 
-.card_name {
+.card__name {
   margin-left: 30px;
   font-weight: 400;
   cursor: pointer;
 }
 
-.card_name:hover {
+.card__name:hover {
   text-decoration:underline;
 }
