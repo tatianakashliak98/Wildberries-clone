@@ -1,5 +1,5 @@
-let swiper = new Swiper('.swiper-container',{
-    spaceBetween:50,
+let swiper = new Swiper('.swiper',{
+    spaceBetween:300,
     slidesPerView:1,
     navigation:{
         nextEl:'.swiper-button-next',
@@ -7,8 +7,9 @@ let swiper = new Swiper('.swiper-container',{
     },
     pagination:{
         el:'.swiper-pagination',
-        clicable:true,
+        clickable:true,
         dynamicBullets:true,
     },
     loop:true,
+   
 });
