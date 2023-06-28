@@ -176,7 +176,7 @@ input[type="text"] {
 
 @media (max-width: 886px) {
   .header {
-    padding: 30px 25px;
+    padding: 20px 25px;
   }
 
   .header__logo {
@@ -188,17 +188,17 @@ input[type="text"] {
   }
 
   .header__searchbar {
-    height: 60px;
+    height: 65px;
     padding: 10px;
   }
 
   .header__searchbar:hover {
-    height: 62px;
+    height: 67px;
   }
 
   .header__search-btn {
-    height: 27px;
-    top: 16.5px;
+    height: 29px;
+    top: 18px;
     right: 35px;
   }
   
@@ -211,7 +211,7 @@ input[type="text"] {
   }
 
   .header__searchbar::placeholder {
-    font-size: 17px;
+    font-size: 18px;
   }
   
   input[type="text"] {
@@ -219,56 +219,84 @@ input[type="text"] {
   }
 
   .header__basket-btn {
-    padding: 20px 30px;
+    padding: 23px 30px;
     font-size: 15px;
   }
 }
 
 @media (max-width: 720px) {
+  .wrapper {
+    max-width: 95%;
+  }
+
+  .header {
+    padding-top: 20px;
+  }
+
   .header__search-box {
-    width: 46%;
+    width: 60%;
   }
 
   .header__searchbar {
-    height: 50px;
+    height: 60px;
     padding: 10px;
   }
 
   .header__searchbar:hover {
-    height: 52px;
+    height: 62px;
   }
 
   .header__search-btn {
-    height: 24px;
-    top: 13px;
+    height: 26px;
+    top: 17px;
     right: 30px;
   }
 
   .header__basket-btn {
-    padding: 15px 23px;
+    font-size: 0;
+    background: url(./image/Tilda_Icons_3st_cart.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 47px;
+    padding: 30px;
   }
+
+  .header__basket-btn {
+    border-radius: 0;
+  }
+  
+  .header__basket-btn:hover {
+    box-shadow: none;
+  }
+
+  .header__basket-btn:active {
+    background: url(./image/Tilda_Icons_3st_cart.svg);
+    padding: 30px;
+    transition: .1s;
+  }
+
 }
 
 @media (max-width: 576px) {
   .header {
-    padding: 40px 20px 15px 15px;
+    padding: 20px 20px 15px 15px;
   }
 
   .header__logo {
-    font-size: 15px;
+    font-size: 18px;
   }
 
   .header__search-box {
-    width: 45%;
+    width: 65%;
   }
 
   .header__searchbar {
-    height: 35px;
+    height: 46px;
     padding: 10px;
   }
 
   .header__searchbar:hover {
-    height: 35px;
+    height: 46px;
     box-shadow: none;
   }
 
@@ -277,11 +305,11 @@ input[type="text"] {
   }
 
   .header__searchbar::placeholder {
-    font-size: 10px;
+    font-size: 13px;
   }
   
   input[type="text"] {
-    font-size: 10px;
+    font-size: 13px;
   }
 
   :focus::-webkit-input-placeholder {
@@ -289,8 +317,28 @@ input[type="text"] {
   }
 
   .header__basket-btn {
-    padding: 13px 18px;
-    font-size: 10px;
+    font-size: 0;
+    background: url(./image/Tilda_Icons_3st_cart.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 43px;
+    padding: 20px;
+  }
+
+  .header__basket-btn {
+    border-radius: 0;
+  }
+  
+  .header__basket-btn:hover {
+    box-shadow: none;
+  }
+
+  .header__basket-btn:active {
+    background: url(./image/Tilda_Icons_3st_cart.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 43px;
+    padding: 20px;
   }
 }
 
