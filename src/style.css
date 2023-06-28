@@ -251,9 +251,6 @@ input[type="text"] {
   background-size: cover;
   background-position: center;
 }
-
-
-
 .card__picture:hover {
   box-shadow: 2px 5px 5px rgba(83, 83, 83, 0.462);
 }
@@ -320,10 +317,6 @@ input[type="text"] {
   margin: 20px 0;
 }
 
-.new__price {
-  text-shadow: 1px 1px 2px  rgb(255, 255, 255);
-}
-
 .card__name {
   margin-left: 30px;
   font-weight: 600;
@@ -347,12 +340,15 @@ input[type="text"] {
 
 @media (max-width: 1024px) {
   .card {
-    width: 250px;
+    width: 33%;
     height: 420px;
   }
 }
 
-@media (max-width: 830px) {
+@media (max-width: 767px) {
+  .wrapper {
+    max-width: 95%;
+  }
   .view__container:hover {
     opacity: 0;
     cursor: auto;
@@ -363,23 +359,24 @@ input[type="text"] {
   .card__picture:hover {
     box-shadow: none;
   }
+  .main__header {
+    font-size: 24px;
+    line-height: 30px;
+  }
   .card {
-    width: 100%;
-    height: 400px;
-    display: flex;
-    justify-content: space-between;
+    width: 50%;
+    height: 600px;
   }
   .card__picture {
-    width: 40%;
-    height: 80%;
-    margin: 0 10px 10px 10px;
-    margin-left: 0;
+    max-width: 95%;
+    height: 60%;
   }
   .view__card-btn {
     opacity: 2;
   }
   .card__description {
-    width: 50%;
+    width: 100%;
+    margin-left: 15px;
   }
   .card__price {
     display: block;
@@ -396,12 +393,13 @@ input[type="text"] {
   font-family: 'Montserrat Alternates', sans-serif;
   font-size: 13px;
   border-radius: 5px;
-  width: 200px;
-  height: 30px;
+  max-width: 230px;
+  padding: 7px;
+  min-height: 35px;
   margin-top: 30px;
   }
   .hide__card__name {
-    font-size: 32px;
+    font-size: 22px;
     font-weight: 600;
     text-shadow: 2px 2px 4px rgb(255, 255, 255);
   }
@@ -409,31 +407,51 @@ input[type="text"] {
     display: none;
   }
   .new__price, .old-price {
-    margin: 30px 0;
+    margin: 10px 0;
   }
-  .new__price {
-    text-shadow: 2px 2px 4px rgb(255, 255, 255);
-  }
+
   .main__header {
     margin-left: 20%;
   }
 }
 
-@media (max-width:425px) {
+@media (max-width:430px) {
+  .wrapper {
+    width: 95%;
+  }
+  .main__header {
+    font-size: 20px;
+    margin: 10%;
+  }
+  .hide__card__name {
+    font-size: 18px;
+  }
   .card {
     display: flex;
     flex-direction: column;
-    width: 100%;
-    height: auto;
+    width: 50%;
+    height: 30%;
     align-items: center;
     margin-bottom: 40px;
   }
   .card__picture {
     width: 100%;
-    height: 400px;
+    height: 200px;
   }
-  .main__header {
-    margin: 15%;
+  .new__price, .old-price,.hide__description {
+    font-size: 14px;
+  }
+  .hide__view__card-btn {
+    width: 160px;
+  }
+  .card__description {
+    margin-left: 20px;
+  }
+}
+
+@media (max-width:330px){
+  .hide__view__card-btn {
+    max-width: 100px;
   }
 }
 
