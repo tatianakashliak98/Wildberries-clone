@@ -148,6 +148,7 @@ input[type="text"] {
 .swiper-slide img{   
     border-radius: 30px;
     width: 100%;
+    height: 100%;
     object-fit: cover;
 }
 .swiper-button-next,
@@ -217,6 +218,7 @@ input[type="text"] {
 }
 
 /* main-styles */
+
 
 .main__cards {
   max-width: 100%;
@@ -382,7 +384,10 @@ input[type="text"] {
   text-decoration: line-through;
 }
 
-@media (max-width: 1024px) {
+@media  only screen and  (max-width: 1024px) {
+  .swiper-container{
+    height: 300px;
+  }
   .card {
     width: 22%;
     height: 420px;
@@ -391,8 +396,15 @@ input[type="text"] {
     margin: 10vmin auto; 
   }
 }
-
-@media (max-width: 767px) {
+@media only screen and (max-width:900px){
+  .swiper-container{
+    height: 250px;
+  }
+}
+@media only screen and (max-width:768px){
+  .swiper-container{
+    height: 200px;
+  }
   .wrapper {
     max-width: 95%;
   }
@@ -468,7 +480,20 @@ input[type="text"] {
   }
 }
 
-@media (max-width:430px) {
+@media only screen and (max-width:600px){
+  .swiper-container{
+    height: 180px;
+  }
+}
+@media only screen and (max-width:540px){
+  .swiper-container{
+    height: 150px;
+  }
+}
+@media only screen and (max-width:480px){
+  .swiper-container{
+    height: 130px;
+  }
   .wrapper {
     width: 95%;
   }
@@ -508,12 +533,15 @@ input[type="text"] {
   .modal__description {
     width: 67%;
   }
-
 }
-
-@media (max-width:330px){
-  .hide__view__card-btn {
+@media only screen and (max-width:400px){
+  .swiper-container{
+    height: auto;
+  }
+   .hide__view__card-btn {
     max-width: 100px;
   }
 }
+/* slider swiper style end */
+
 
