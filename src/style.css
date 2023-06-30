@@ -38,6 +38,7 @@ body::before {
   background-color: rgba(255, 255, 255, 0.119);
   z-index: -1;
 }
+
 .wrapper {
   margin: 0 auto;
   max-width: 90%;
@@ -47,17 +48,26 @@ body::before {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  padding: 30px 50px;
+  padding: 30px 20px;
+  max-width: 100%;
 } 
 
+.highlight {
+  background-color: rgba(65, 10, 80, 0.65);
+}
+
+.hidden {
+  display: none;
+}
+
 .header__logo {
-  font-size: 25px;
+  font-size: 30px;
   font-weight: bold;
   border-radius: 20px;
   align-items: center;
   cursor: pointer;
   background: linear-gradient(90deg, rgb(170, 99, 201), rgb(65, 10, 80));
-  background-clip: text;
+  -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
@@ -79,7 +89,7 @@ body::before {
 
 .header__searchbar:hover {
   height: 72px;
-  transition: .1s;
+  transition: .3s;
   box-shadow: 2px 5px 5px rgba(83, 83, 83, 0.262);
 }
 
@@ -110,7 +120,6 @@ input[type="text"] {
   font-size: 20px;
 }
 
-
 :focus::-webkit-input-placeholder {
   color: transparent;
 }
@@ -133,7 +142,219 @@ input[type="text"] {
 }
 
 .header__basket-btn:active {
-    background: rgb(100, 17, 123);
+  background: rgb(100, 17, 123);
+}
+
+@media (max-width: 1140px) {
+
+  .header__search-box {
+    width: 55%;
+  }
+
+  .header__searchbar {
+    height: 65px;
+    padding: 10px;
+  }
+
+  .header__searchbar:hover {
+    height: 67px;
+  }
+
+  .header__search-btn {
+    height: 27px;
+    top: 20px;
+    right: 35px;
+  }
+  
+  .header__search-btn:hover {
+    right: 25px;
+  }
+  
+  .header__searchbar:hover + .header__search-btn {
+    right: 25px;
+  }
+
+
+  .header__basket-btn {
+    padding: 23px 40px;
+  }
+}
+
+@media (max-width: 886px) {
+  .header {
+    padding: 20px 25px;
+  }
+
+  .header__logo {
+    font-size: 26px;
+  }
+
+  .header__search-box {
+    width: 52%;
+  }
+
+  .header__searchbar {
+    height: 65px;
+    padding: 10px;
+  }
+
+  .header__searchbar:hover {
+    height: 67px;
+  }
+
+  .header__search-btn {
+    height: 29px;
+    top: 18px;
+    right: 35px;
+  }
+  
+  .header__search-btn:hover {
+    right: 25px;
+  }
+  
+  .header__searchbar:hover + .header__search-btn {
+    right: 25px;
+  }
+
+  .header__searchbar::placeholder {
+    font-size: 18px;
+  }
+  
+  input[type="text"] {
+    font-size: 17px;
+  }
+
+  .header__basket-btn {
+    padding: 23px 30px;
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 720px) {
+  .wrapper {
+    max-width: 95%;
+  }
+
+  .header {
+    flex-wrap: wrap;
+    padding-top: 20px;
+  }
+
+  .header__logo {
+    width: 100%;
+    margin-bottom: 15px;
+    text-align: center;
+    font-size: 40px;
+  }
+
+  .header__search-box {
+    width: 80%;
+  }
+
+  .header__searchbar {
+    height: 60px;
+    padding: 10px;
+  }
+
+  .header__searchbar:hover {
+    height: 62px;
+  }
+
+  .header__search-btn {
+    height: 26px;
+    top: 17px;
+    right: 30px;
+  }
+
+  .header__basket-btn {
+    font-size: 0;
+    background: url(./image/2205959_cart_bag_internet_shopping_buy_icon.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 40px;
+    padding: 30px 45px;
+    border-radius: 20px;
+    background-color: rgb(86 24 149);
+  }
+
+  .header__basket-btn:active {
+    background: url(./image/2205959_cart_bag_internet_shopping_buy_icon.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 38px;
+    padding: 31px 46px;
+    border-radius: 20px;
+    background-color: rgb(100, 17, 123);
+    transition: all .1s;
+  }
+
+}
+
+@media (max-width: 576px) {
+  .header {
+    padding: 20px 20px 15px 15px;
+  }
+
+  .header__logo {
+    font-size: 35px;
+  }
+
+  .header__search-box {
+    width: 75%;
+    margin: 0;
+  }
+
+  .header__searchbar {
+    height: 44px;
+    padding: 10px;
+  }
+
+  .header__searchbar:hover {
+    height: 44px;
+    box-shadow: none;
+  }
+
+  .header__search-btn {
+    display: none;
+  }
+
+  .header__searchbar::placeholder {
+    font-size: 13px;
+  }
+  
+  input[type="text"] {
+    font-size: 13px;
+  }
+
+  :focus::-webkit-input-placeholder {
+    color: none;
+  }
+
+  .header__basket-btn {
+    font-size: 0;
+    background: url(./image/2205959_cart_bag_internet_shopping_buy_icon.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 30px;
+    padding: 22px 40px;
+    border-radius: 20px;
+    background-color: rgb(86 24 149);
+  }
+  
+  .header__basket-btn:hover {
+    box-shadow: none;
+  }
+
+  .header__basket-btn:active {
+    font-size: 0;
+    background: url(./image/2205959_cart_bag_internet_shopping_buy_icon.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 30px;
+    padding: 22px 40px;
+    border-radius: 20px;
+    background-color: rgb(86 24 149);
+  }
 }
 
 /* Slider-swiper style */
