@@ -4,8 +4,12 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
+    />
     <title>Wildberries clone</title>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@100;300;400;600&display=swap" rel="stylesheet">
@@ -16,6 +20,7 @@
       <header class="header">
         <a href="/" class="header__logo">Wildberries</a>
         <div class="header__search-box">
+
           <input type="text" id="searchInput" class="header__searchbar" maxlength= "36" placeholder="Поиск…">
           <input type="image" class="header__search-btn" name="image" src="https://images-na.ssl-images-amazon.com/images/I/41gYkruZM2L.png">
         </div>
@@ -23,37 +28,49 @@
           <button class="header__basket-btn" id="header__basket-btn">Корзина</button>
         </div>
       </header>
-
-
       <div class="swiper swiper-container">
-            <div class="swiper-wrapper">
-            
-                <div class="swiper-slide">
-                  <img src="/src/img/slider1.jpg" alt="slider1">
-                </div>
-                
-                <div class="swiper-slide">
-                  <img src="/src/img/slider2.jpg" alt="slider2">
-                </div>
-                <div class="swiper-slide">
-                  <img src="/src/img/slider3.jpg" alt="slider3">
-                </div>
-                <div class="swiper-slide">
-                  <img src="/src/img/slider4.jpg" alt="slider4">
-                </div>
-            
-            </div>
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <img src="/src/img/slider1.jpg" alt="slider1" />
+          </div>
 
-            <div class="swiper-button-next"></div>
-            <div class="swiper-button-prev"></div>
-            <div class="swiper-pagination"></div>
+          <div class="swiper-slide">
+            <img src="/src/img/slider2.jpg" alt="slider2" />
+          </div>
+          <div class="swiper-slide">
+            <img src="/src/img/slider3.jpg" alt="slider3" />
+          </div>
+          <div class="swiper-slide">
+            <img src="/src/img/slider4.jpg" alt="slider4" />
+          </div>
+        </div>
+
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-pagination"></div>
       </div>
 
       <main>
+        <div id="card__preview" class="modal">
+          <div class="modal__content">
+              <span class="modal__close">&times;</span>
+              <img id="modal__image"  alt="Увеличенное изображение">
+              <div class="modal__description">
+                <div>
+                  <h2 id="modal__title"></h2>
+                  <p id="modal__price"></p>
+                </div>
+                <div>
+                  <button type="button" class="btn-basket"></button>
+                </div>
+              </div>
+          </div>
+        </div>
         <h1 class="main__header">Хиты продаж</h1>
         <div class="main__cards">
           <div class="card">
-            <div class="card__picture trousers">
+            <div class="card__picture">
+              <img class="product-img" src="./images/trousers.jpg" alt="#">
               <div class="view__container">
                 <button type="button" class="view__card-btn">
                   Быстрый просмотр
@@ -67,15 +84,24 @@
             <div class="card__description">
               <div class="card__price">
                 <p class="hide__card__name">Штаны</p>
-                <p class="new__price"><span class="hide__description">Стоимость : </span> 900p</p>
-                <p><span class="hide__description">Вместо  </span> <span class="old-price">1000p</span></p>
-                <button type="button" class="hide__view__card-btn">Смотреть подробнее..</button>
+                <p class="new__price">
+                  <span class="hide__description">Стоимость : </span> 
+                  <span class="price">900p</span>
+                </p>
+                <p>
+                  <span class="hide__description">Вместо </span>
+                  <span class="old-price">1000p</span>
+                </p>
+                <button type="button" class="hide__view__card-btn">
+                  Смотреть подробнее..
+                </button>
               </div>
               <div class="card__name">Штаны</div>
             </div>
           </div>
           <div class="card">
-            <div class="card__picture dress">
+            <div class="card__picture">
+              <img class="product-img" src="./images/dress.jpg" alt="#">
               <div class="view__container">
                 <button type="button" class="view__card-btn">
                   Быстрый просмотр
@@ -89,15 +115,24 @@
             <div class="card__description">
               <div class="card__price">
                 <p class="hide__card__name">Платье</p>
-                <p class="new__price"><span class="hide__description">Стоимость : </span> 900p</p>
-                <p><span class="hide__description">Вместо  </span> <span class="old-price">1000p</span></p>
-                <button type="button" class="hide__view__card-btn">Смотреть подробнее..</button>
+                <p class="new__price">
+                  <span class="hide__description">Стоимость : </span> 
+                  <span class="price">900p</span>
+                </p>
+                <p>
+                  <span class="hide__description">Вместо </span>
+                  <span class="old-price">1000p</span>
+                </p>
+                <button type="button" class="hide__view__card-btn">
+                  Смотреть подробнее..
+                </button>
               </div>
               <div class="card__name">Платье</div>
             </div>
           </div>
           <div class="card">
-            <div class="card__picture costume">
+            <div class="card__picture">
+              <img class="product-img" src="./images/costume.jpg" alt="#">
               <div class="view__container">
                 <button type="button" class="view__card-btn">
                   Быстрый просмотр
@@ -111,15 +146,24 @@
             <div class="card__description">
               <div class="card__price">
                 <p class="hide__card__name">Костюм</p>
-                <p class="new__price"><span class="hide__description">Стоимость : </span> 900p</p>
-                <p><span class="hide__description">Вместо  </span> <span class="old-price">1000p</span></p>
-                <button type="button" class="hide__view__card-btn">Смотреть подробнее..</button>
+                <p class="new__price">
+                  <span class="hide__description">Стоимость : </span> 
+                  <span class="price">900p</span>
+                </p>
+                <p>
+                  <span class="hide__description">Вместо </span>
+                  <span class="old-price">1000p</span>
+                </p>
+                <button type="button" class="hide__view__card-btn">
+                  Смотреть подробнее..
+                </button>
               </div>
               <div class="card__name">Костюм</div>
             </div>
           </div>
           <div class="card">
-            <div class="card__picture t-shirt">
+            <div class="card__picture">
+              <img class="product-img" src="./images/t-shirt.jpg" alt="#">
               <div class="view__container">
                 <button type="button" class="view__card-btn">
                   Быстрый просмотр
@@ -133,15 +177,24 @@
             <div class="card__description">
               <div class="card__price">
                 <p class="hide__card__name">Футболка</p>
-                <p class="new__price"><span class="hide__description">Стоимость : </span> 900p</p>
-                <p><span class="hide__description">Вместо  </span> <span class="old-price">1000p</span></p>
-                <button type="button" class="hide__view__card-btn">Смотреть подробнее..</button>
+                <p class="new__price">
+                  <span class="hide__description">Стоимость : </span> 
+                  <span class="price">900p</span>
+                </p>
+                <p>
+                  <span class="hide__description">Вместо </span>
+                  <span class="old-price">1000p</span>
+                </p>
+                <button type="button" class="hide__view__card-btn">
+                  Смотреть подробнее..
+                </button>
               </div>
               <div class="card__name">Футболка</div>
             </div>
           </div>
           <div class="card">
-            <div class="card__picture trousers">
+            <div class="card__picture">
+              <img class="product-img" src="./images/trousers.jpg" alt="#">
               <div class="view__container">
                 <button type="button" class="view__card-btn">
                   Быстрый просмотр
@@ -155,15 +208,24 @@
             <div class="card__description">
               <div class="card__price">
                 <p class="hide__card__name">Штаны</p>
-                <p class="new__price"><span class="hide__description">Стоимость : </span> 900p</p>
-                <p><span class="hide__description">Вместо  </span> <span class="old-price">1000p</span></p>
-                <button type="button" class="hide__view__card-btn">Смотреть подробнее..</button>
+                <p class="new__price">
+                  <span class="hide__description">Стоимость : </span>
+                  <span class="price">900p</span>
+                </p>
+                <p>
+                  <span class="hide__description">Вместо </span>
+                  <span class="old-price">1000p</span>
+                </p>
+                <button type="button" class="hide__view__card-btn">
+                  Смотреть подробнее..
+                </button>
               </div>
               <div class="card__name">Штаны</div>
             </div>
           </div>
           <div class="card">
-            <div class="card__picture dress">
+            <div class="card__picture">
+              <img class="product-img" src="./images/dress.jpg" alt="#">
               <div class="view__container">
                 <button type="button" class="view__card-btn">
                   Быстрый просмотр
@@ -177,9 +239,17 @@
             <div class="card__description">
               <div class="card__price">
                 <p class="hide__card__name">Платье</p>
-                <p class="new__price"><span class="hide__description">Стоимость : </span> 900p</p>
-                <p><span class="hide__description">Вместо  </span> <span class="old-price">1000p</span></p>
-                <button type="button" class="hide__view__card-btn">Смотреть подробнее..</button>
+                <p class="new__price">
+                  <span class="hide__description">Стоимость : </span> 
+                  <span class="price">900p</span>
+                </p>
+                <p>
+                  <span class="hide__description">Вместо </span>
+                  <span class="old-price">1000p</span>
+                </p>
+                <button type="button" class="hide__view__card-btn">
+                  Смотреть подробнее..
+                </button>
               </div>
               <div class="card__name">Платье</div>
             </div>
@@ -191,4 +261,3 @@
     <script type="module" src="script.js"></script>
   </body>
 </html>
-

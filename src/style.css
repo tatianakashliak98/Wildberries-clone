@@ -21,9 +21,9 @@ body {
   width: 100%;
   font-family: 'Montserrat Alternates', sans-serif;
   background-image: url(./images/4.jpg);
-  background-repeat: no-repeat;
+  background-repeat: repeat;
   background-position: center;
-  background-size: cover;
+  background-size:cover;
   min-height: 100vh;
   color: rgb(100, 17, 123);
 }
@@ -386,45 +386,59 @@ input[type="text"] {
     background-color: rgb(92, 16, 163);
 }
 
+/* modal window */
 
+.modal {
+  display: none; 
+  position: fixed; 
+  z-index: 1; 
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto; 
+  background-color: rgba(0, 0, 0, 0.8); 
+  
+}
+#modal__image {
+  width: 70%;
+  height: 70%;
+  border-radius: 20px;
+}
+.modal__description {
+  width: 52%;
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  justify-content: space-around;
+}
 
-@media only screen and (max-width:1024px){
-  .swiper-container{
-    height: 300px;
-  }
-}
-@media only screen and (max-width:900px){
-  .swiper-container{
-    height: 250px;
-  }
-}
-@media only screen and (max-width:768px){
-  .swiper-container{
-    height: 200px;
-  }
+.modal__content {
+  background-color: #f9bde8d1;
+  margin: 4vmin auto; 
+  padding: 20px;
+  border: 1px solid #888;
+  max-width: 45%;
+  text-align: center;
+  border-radius: 20px;
 }
 
-@media only screen and (max-width:600px){
-  .swiper-container{
-    height: 180px;
-  }
+.modal__close {
+  color: #4d4d4d;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
 }
-@media only screen and (max-width:540px){
-  .swiper-container{
-    height: 150px;
-  }
+
+.modal__close:hover,
+.modal__close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
 }
-@media only screen and (max-width:480px){
-  .swiper-container{
-    height: 130px;
-  }
-}
-@media only screen and (max-width:400px){
-  .swiper-container{
-    height: auto;
-  }
-}
-/* slider swiper style end */
+
+/* main-styles */
 
 
 .main__cards {
@@ -435,8 +449,9 @@ input[type="text"] {
 }
 
 .card {
-  width: 210px;
+  width: 200px;
   height: 420px;
+  margin: 0 5px;
 }
 
 .main__header {
@@ -480,50 +495,37 @@ input[type="text"] {
 }
 .card__picture {
   position: relative;
-  border: 2px solid rgb(100, 17, 123);
+  top: 0;
+  left: 0;
   border-radius: 20px;
-  max-width: 80%;
+  max-width: 100%;
   margin: auto;
-  height: 270px;
-  
+  height: 60%;
   display: flex;
   flex-direction: column;
   justify-content: end;
-  padding: 5px;
-}
-.t-shirt {
-  background: no-repeat url("./images/t-shirt.jpg");
-  background-size: cover;
-  background-position: center;
 }
 
-.trousers {
-  background: no-repeat url("./images/trousers.jpg");
-  background-size: cover;
-  background-position: center;
-}
-
-.dress {
-  background: no-repeat url("./images/dress.jpg");
-  background-size: cover;
-  background-position: center;
-}
-
-.costume {
-  background: no-repeat url("./images/costume.jpg");
-  background-size: cover;
-  background-position: center;
-}
 .card__picture:hover {
   box-shadow: 2px 5px 5px rgba(83, 83, 83, 0.462);
 }
+.product-img {
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+   border: 2px solid rgb(100, 17, 123); 
+   border-radius: 20px;
+}
 
 .discount__and__basket {
+  position: absolute;
+  width: 100%;
+  padding: 5px;
   display: flex;
   justify-content: space-between;
   align-items: end;
 }
-.discount, .new__price {
+.discount, .price {
   font-size: 18px ;
   font-weight: 700;
 } 
@@ -551,16 +553,18 @@ input[type="text"] {
   transition-delay: 0.2s;
 }
 .view__card-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
   border: none;
   background: linear-gradient(90deg, rgb(160, 95, 188), rgba(100, 17, 123, 0.417));
   color: #fff;
   font-family: 'Montserrat Alternates', sans-serif;
   font-size: 12px;
   border-radius: 5px;
-  width: 142px;
+  width: 85%;
   height: 30px;
-  margin-top: 60%;
-  margin-left: 8%;
+  transform: translateX(-50%);
 }
 
 .btn-basket {
@@ -601,14 +605,27 @@ input[type="text"] {
   text-decoration: line-through;
 }
 
-@media (max-width: 1024px) {
+@media  only screen and  (max-width: 1024px) {
+  .swiper-container{
+    height: 300px;
+  }
   .card {
-    width: 33%;
+    width: 22%;
     height: 420px;
   }
+  .modal__content {
+    margin: 10vmin auto; 
+  }
 }
-
-@media (max-width: 767px) {
+@media only screen and (max-width:900px){
+  .swiper-container{
+    height: 250px;
+  }
+}
+@media only screen and (max-width:768px){
+  .swiper-container{
+    height: 200px;
+  }
   .wrapper {
     max-width: 95%;
   }
@@ -627,8 +644,8 @@ input[type="text"] {
     line-height: 30px;
   }
   .card {
-    width: 50%;
-    height: 600px;
+    width: 30%;
+    height: auto;
   }
   .card__picture {
     max-width: 95%;
@@ -639,7 +656,7 @@ input[type="text"] {
   }
   .card__description {
     width: 100%;
-    margin-left: 15px;
+    margin-left: 5px;
   }
   .card__price {
     display: block;
@@ -648,6 +665,7 @@ input[type="text"] {
   .hide__card__name,
   .hide__view__card-btn {
     display: inline-block;
+    font-size: 14px;
   }
   .hide__view__card-btn {
     border: none;
@@ -659,10 +677,11 @@ input[type="text"] {
   max-width: 230px;
   padding: 7px;
   min-height: 35px;
-  margin-top: 30px;
+  margin-top: 15px;
+  margin-bottom: 15px;
   }
   .hide__card__name {
-    font-size: 22px;
+    font-size: 20px;
     font-weight: 600;
     text-shadow: 2px 2px 4px rgb(255, 255, 255);
   }
@@ -670,15 +689,32 @@ input[type="text"] {
     display: none;
   }
   .new__price, .old-price {
-    margin: 10px 0;
+    margin: 5px 0;
   }
 
   .main__header {
     margin-left: 20%;
   }
+  .modal__content {
+    margin: 10vmin auto; 
+    max-width: 65%;
+  }
 }
 
-@media (max-width:430px) {
+@media only screen and (max-width:600px){
+  .swiper-container{
+    height: 180px;
+  }
+}
+@media only screen and (max-width:540px){
+  .swiper-container{
+    height: 150px;
+  }
+}
+@media only screen and (max-width:480px){
+  .swiper-container{
+    height: 130px;
+  }
   .wrapper {
     width: 95%;
   }
@@ -692,7 +728,7 @@ input[type="text"] {
   .card {
     display: flex;
     flex-direction: column;
-    width: 50%;
+    width: 45%;
     height: 30%;
     align-items: center;
     margin-bottom: 40px;
@@ -710,11 +746,23 @@ input[type="text"] {
   .card__description {
     margin-left: 20px;
   }
+  .modal__content {
+    margin: 20vmin auto; 
+    max-width: 65%;
+    font-size: 13px;
+  }
+  .modal__description {
+    width: 67%;
+  }
 }
-
-@media (max-width:330px){
-  .hide__view__card-btn {
+@media only screen and (max-width:400px){
+  .swiper-container{
+    height: auto;
+  }
+   .hide__view__card-btn {
     max-width: 100px;
   }
 }
+/* slider swiper style end */
+
 
