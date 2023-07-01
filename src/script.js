@@ -1,4 +1,5 @@
 import { modalWindow, close__modal } from "./card_modal_window.js";
+import { search } from "./product_search.js";
 
 let swiper = new Swiper('.swiper',{
     spaceBetween:300,
@@ -20,3 +21,5 @@ let mainContainer = document.querySelector("main");
 mainContainer.addEventListener('click', modalWindow);
 let modalClose = document.querySelector(".modal__close");
 modalClose.addEventListener('click', close__modal);
+
+document.getElementById('searchInput').addEventListener('input', search); 
