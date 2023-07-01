@@ -1,6 +1,6 @@
  
  let mainCardsDiv = document.querySelector(".main__cards");
- export function getTodos() {
+ export function getProducts() {
   fetch('https://64a017bfed3c41bdd7a6fc7b.mockapi.io/products', {
     method: 'GET',
     headers: {'content-type':'application/json'},
@@ -10,13 +10,12 @@
   }
 })
   .then(data => {
-    console.log(data);
-    printTodos(data)
+    printProducts(data)
   })
 }
 
 
-function printTodos(response) {
+function printProducts(response) {
   response.map(function(item) {
     let {  title, price, image, discount } = item;
     mainCardsDiv.innerHTML +=

@@ -1,8 +1,8 @@
 import { modalWindow, close__modal } from "./card_modal_window.js";
-import { getTodos } from "./api.js";
+import { getProducts } from "./api.js";
 
 
-  getTodos();
+  getProducts();
   
 let swiper = new Swiper('.swiper',{
     spaceBetween:300,
