@@ -22,6 +22,7 @@ export function search() {
 
         if (nameText.includes(searchValue)) {
             card.classList.remove('hidden');
+            card.style.display = 'block';
 
             let highlightedText = nameText.replace(new RegExp(searchValue, 'gi'),
                 function(match) {
@@ -30,6 +31,7 @@ export function search() {
             );
             cardName.innerHTML = highlightedText;
         } else {
+            card.style.display = 'none';
             card.classList.add('hidden');
             cardName.innerHTML = cardName.textContent;
         }

@@ -458,7 +458,7 @@ input[type="text"] {
 .main__cards {
   max-width: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   flex-wrap: wrap;
 }
 
@@ -483,7 +483,7 @@ input[type="text"] {
 
 .main__header-search {
   color: #5c10a3;
-  margin: 80px 10px;
+  margin: 50px 10px;
   font-size: 22px;
 }
 
@@ -775,6 +775,11 @@ input[type="text"] {
   }
   .modal__description {
     width: 67%;
+  }
+  .main__header-search {
+    color: #5c10a3;
+    margin: 25px 10px;
+    font-size: 18px;
   }
 }
 @media only screen and (max-width:400px){
