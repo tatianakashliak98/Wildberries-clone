@@ -411,7 +411,6 @@ input[type="text"] {
   height: 100%;
   overflow: auto; 
   background-color: rgba(0, 0, 0, 0.8); 
-  
 }
 #modal__image {
   width: 70%;
@@ -428,10 +427,10 @@ input[type="text"] {
 
 .modal__content {
   background-color: #f9bde8d1;
-  margin: 4vmin auto; 
+  margin: 4vh auto; 
   padding: 20px;
   border: 1px solid #888;
-  max-width: 45%;
+  max-width: 44%;
   text-align: center;
   border-radius: 20px;
 }
@@ -439,9 +438,10 @@ input[type="text"] {
 .modal__close {
   color: #4d4d4d;
   float: right;
-  font-size: 28px;
+  font-size: 35px;
   font-weight: bold;
   cursor: pointer;
+  margin-left: -20px;
 }
 
 .modal__close:hover,
@@ -457,7 +457,7 @@ input[type="text"] {
 .main__cards {
   max-width: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   flex-wrap: wrap;
 }
 
@@ -618,6 +618,16 @@ input[type="text"] {
   text-decoration: line-through;
 }
 
+@media  only screen and  (max-width: 1300px) {
+  .modal__content {
+    max-width: 50%;
+  }
+}
+@media  only screen and  (max-width: 1200px) {
+  .modal__content {
+    max-width: 55%;
+  }
+}
 @media  only screen and  (max-width: 1024px) {
   .swiper-container{
     height: 300px;
@@ -627,12 +637,15 @@ input[type="text"] {
     height: 420px;
   }
   .modal__content {
-    margin: 10vmin auto; 
+    margin: 5vh auto; 
   }
 }
 @media only screen and (max-width:900px){
   .swiper-container{
     height: 250px;
+  }
+  .modal__content {
+    max-width: 65%;
   }
 }
 @media only screen and (max-width:768px){
@@ -709,8 +722,7 @@ input[type="text"] {
     margin-left: 20%;
   }
   .modal__content {
-    margin: 10vmin auto; 
-    max-width: 65%;
+    max-width: 75%;
   }
 }
 
@@ -759,9 +771,15 @@ input[type="text"] {
   .card__description {
     margin-left: 20px;
   }
+  #modal__title {
+    font-size: 13px;
+  }
+  #modal__price {
+    font-size: 13px;
+  }
   .modal__content {
     margin: 20vmin auto; 
-    max-width: 65%;
+    max-width: 75%;
     font-size: 13px;
   }
   .modal__description {
