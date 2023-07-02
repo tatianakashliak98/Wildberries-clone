@@ -481,6 +481,12 @@ input[type="text"] {
   text-transform: uppercase;
 }
 
+.main__header-search {
+  color: #5c10a3;
+  margin: 80px 10px;
+  font-size: 22px;
+}
+
 .main__header::before {
   content: '';
   position: absolute;
