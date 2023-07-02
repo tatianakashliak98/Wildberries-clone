@@ -1,4 +1,5 @@
- 
+export let arrayProducts;
+
  let mainCardsDiv = document.querySelector(".main__cards");
  export function getProducts() {
   fetch('https://64a017bfed3c41bdd7a6fc7b.mockapi.io/products', {
@@ -11,6 +12,8 @@
 })
   .then(data => {
     printProducts(data)
+    arrayProducts = [...data];
+    localStorage.setItem('products', JSON.stringify(arrayProducts))
   })
 }
 
