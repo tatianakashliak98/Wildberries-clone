@@ -1,6 +1,10 @@
 import { modalWindow, close__modal } from "./card_modal_window.js";
+import { getProducts } from "./api.js";
 import { search } from "./product_search.js";
 
+
+  getProducts();
+  
 let swiper = new Swiper('.swiper',{
     spaceBetween:300,
     slidesPerView:1,
