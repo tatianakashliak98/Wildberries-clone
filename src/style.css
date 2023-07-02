@@ -282,7 +282,7 @@ input[type="text"] {
 
   .header__basket-btn {
     font-size: 0;
-    background: url(./image/2205959_cart_bag_internet_shopping_buy_icon.png);
+    background: url(./img/2205959_cart_bag_internet_shopping_buy_icon.png);
     background-repeat: no-repeat;
     background-position: center;
     background-size: 40px;
@@ -292,7 +292,7 @@ input[type="text"] {
   }
 
   .header__basket-btn:active {
-    background: url(./image/2205959_cart_bag_internet_shopping_buy_icon.png);
+    background: url(./img/2205959_cart_bag_internet_shopping_buy_icon.png);
     background-repeat: no-repeat;
     background-position: center;
     background-size: 38px;
@@ -346,7 +346,7 @@ input[type="text"] {
 
   .header__basket-btn {
     font-size: 0;
-    background: url(./image/2205959_cart_bag_internet_shopping_buy_icon.png);
+    background: url(./img/2205959_cart_bag_internet_shopping_buy_icon.png);
     background-repeat: no-repeat;
     background-position: center;
     background-size: 30px;
@@ -361,7 +361,7 @@ input[type="text"] {
 
   .header__basket-btn:active {
     font-size: 0;
-    background: url(./image/2205959_cart_bag_internet_shopping_buy_icon.png);
+    background: url(./img/2205959_cart_bag_internet_shopping_buy_icon.png);
     background-repeat: no-repeat;
     background-position: center;
     background-size: 30px;
