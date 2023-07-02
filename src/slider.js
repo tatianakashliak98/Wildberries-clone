@@ -1,4 +1,3 @@
-  
 let swiper = new Swiper('.swiper',{
     spaceBetween:300,
     slidesPerView:1,
@@ -14,5 +13,3 @@ let swiper = new Swiper('.swiper',{
     loop:true,
    
 });
-
-export {swiper}
