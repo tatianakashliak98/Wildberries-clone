@@ -22,7 +22,8 @@ const cardBtnAdd= document.getElementById('btn-basket')
 const itemCard=document.querySelector('.card')
 const cardImage=document.querySelector('.card__picture')
 const fieldBasket=document.querySelector('.discount__and__basket')
-cardBtnAdd.addEventListener('click',addToBasket)
-function addToBasket(e){
-    console.log(e.target.parentElement)
-}
+mainContainer.addEventListener('click', addToBasket)
+
+
+import { addToBasket } from "./basket.js";
+

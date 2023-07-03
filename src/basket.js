@@ -65,3 +65,22 @@ export function closeBasketModal({target}){
         basketModal.style.display = 'none'
     }      
 }
+
+
+//let basketList=[]
+
+export function addToBasket(e){
+  if(e.target.className === 'btn-basket'){
+    let card = e.target.closest('.card');
+        const productInfo = {
+        id: Date.now(),
+        imageSrc: card.querySelector(".product-img").src,
+        name:card.querySelector('.card__name').innerText,
+        price:card.querySelector(".old-price").innerText,
+        }
+        console.log(productInfo)
+    }
+   
+    
+  }
+
