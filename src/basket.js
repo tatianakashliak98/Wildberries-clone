@@ -68,6 +68,7 @@ export function addToBasket(e){
     
   
     if(e.target.className === 'btn-basket'){
+       
     let card = e.target.closest('.card');
     const productInfo = {
 
@@ -90,37 +91,47 @@ export function addToBasket(e){
     ;
 
     basketList.insertAdjacentHTML('beforeend', cardHTML);
+    const repeatItem = basketList.querySelector(`[data-id='${productInfo.id}']`)
+    console.log(repeatItem)
     calcPrice()
 }
 }
 
+let basket=[]
 basketBtnClear.addEventListener('click',clearList)
 function clearList(e){
     if (e.target.className === 'basket__btn-clear'){
         basketList.innerHTML="";
+        basket=[]
+        calcPrice()
 }       
     }
     
 
 basketList.addEventListener('click',deleteProduct)
    
-function deleteProduct(e){
-if(e.target.className === "btn_delete-item"){
-    const itemOfList= e.target.parentElement.closest('li')
+function deleteProduct({target}){
+if(target.className === "btn_delete-item"){
+    const itemOfList= target.parentElement.closest('li')
+    const index=basket.findIndex(function(prod){
+        return prod.id == Number(itemOfList.id)
+    })
+    basket.splice(index,1)
     itemOfList.remove()
+    calcPrice()
 }
-calcPrice()
 }
 
 function calcPrice(){
-    const items=document.querySelectorAll(".item__price")
-    items.forEach(function(item){
-    const priceEl=parseInt(item.innerText)
-    totalPrice+=priceEl
+   basket.forEach((el)=>{
+    totalPrice = totalPrice + parseInt(el.price)
+    //console.log(totalPrice)
     basketFullPrice.innerHTML=`Итого:${totalPrice}`
 })
-    }
-    
+}
+        
+
+
 
 
 
