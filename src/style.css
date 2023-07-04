@@ -656,6 +656,15 @@ input[type="text"] {
   .modal__content {
     max-width: 65%;
   }
+  .card {
+    width: 30%;
+  }
+  .card__picture {
+    height: auto;
+  }
+  .main__header {
+    margin-bottom: 30px;
+  }
 }
 @media only screen and (max-width:768px){
   .swiper-container{
@@ -735,6 +744,14 @@ input[type="text"] {
   }
 }
 
+@media only screen and (max-width:615px) {
+  .price, 
+  .old-price  {
+    display: block;
+  }
+  
+}
+
 @media only screen and (max-width:600px){
   .swiper-container{
     height: 180px;
@@ -763,13 +780,12 @@ input[type="text"] {
     display: flex;
     flex-direction: column;
     width: 45%;
-    height: 30%;
     align-items: center;
     margin-bottom: 40px;
   }
   .card__picture {
     width: 100%;
-    height: 200px;
+    height: auto;
   }
   .new__price, .old-price,.hide__description {
     font-size: 14px;
