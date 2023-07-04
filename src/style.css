@@ -832,7 +832,6 @@ input[type="text"] {
   padding: 20px;
   background-color: #fff;
   width: 450px;
-  height: 500px;
   position: absolute;
   top:20%;
   left: 35%;
@@ -840,13 +839,21 @@ input[type="text"] {
   
 }
 .basket__header-modal{
+  padding: 10px;
   display: flex;
   justify-content: space-between;
   
 }
+.basket__options{
+  padding: 10px;
+}
+.basket__list-modal li{
+padding: 10px 0;
+}
 .basket__btn-close{
   background-color: #fff;
   border-radius: 10px;
+  color: #a80ec6;
   cursor: pointer;
   width: 30px;
   height: 30px;
@@ -871,4 +878,31 @@ input[type="text"] {
   background-color: #eed2f4;
 }
 
+.card__img-modal{
+  width: 100px;
+  border-radius: 5px;
+}
+.item__price{
+  padding-top: 10px;
+}
+.card__basket-modal{
+  display: flex;
+  justify-content: space-evenly;
+}
+.btn_delete-item{
+  width: 20%;
+  height: 80%;
+  background-color: inherit;
+  color: inherit;
+  padding: 5px;
+  border: 1px solid #a80ec6;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.btn_delete-item:hover{
+  background-color: #e15bfc;
+}
+.basket__description-modal{
+  align-items: flex-start;
+}
 /*basket modal style end*/

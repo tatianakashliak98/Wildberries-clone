@@ -29,9 +29,7 @@ const basketList=document.createElement('ul')
 basketList.classList.add('basket__list-modal')
 basketContainer.append(basketList)
 
-const basketItem=document.createElement('li')
-basketItem.classList.add('basket__item')
-basketList.append(basketItem)
+
 
 const basketOptions=document.createElement('div')
 basketOptions.classList.add('basket__options')
@@ -40,8 +38,8 @@ basketContainer.append(basketOptions)
 
 const basketFullPrice=document.createElement('div')
 basketFullPrice.classList.add('basket__full-price')
-basketFullPrice.innerHTML="Итого: 0"
-
+let totalPrice=0
+basketFullPrice.innerHTML=`Итого:${totalPrice}`
 
 const basketBtnClear=document.createElement('button')
 basketBtnClear.classList.add('basket__btn-clear')
@@ -66,21 +64,63 @@ export function closeBasketModal({target}){
     }      
 }
 
-
-//let basketList=[]
-
 export function addToBasket(e){
-  if(e.target.className === 'btn-basket'){
-    let card = e.target.closest('.card');
-        const productInfo = {
-        id: Date.now(),
-        imageSrc: card.querySelector(".product-img").src,
-        name:card.querySelector('.card__name').innerText,
-        price:card.querySelector(".old-price").innerText,
-        }
-        console.log(productInfo)
-    }
-   
     
-  }
+  
+    if(e.target.className === 'btn-basket'){
+    let card = e.target.closest('.card');
+    const productInfo = {
+
+    id: Date.now(),
+    imageSrc: card.querySelector(".product-img").src,
+    name: card.querySelector('.card__name').innerText,
+    price: card.querySelector('.price').innerText,
+    }
+    
+    const cardHTML = `<li class="card__item" data-id="${productInfo.id}">
+    <div class="card__basket-modal" >
+    <img src=${productInfo.imageSrc} alt="card-image" class="card__img-modal">
+    <div class="basket__description-modal">
+    <div class="cart__item-description">${productInfo.name}
+    </div>
+    <div class="item__price">${productInfo.price}
+    </div></div>
+    <button class="btn_delete-item">Удалить</button></div>
+    </li>`
+    ;
+
+    basketList.insertAdjacentHTML('beforeend', cardHTML);
+    calcPrice()
+}
+}
+
+basketBtnClear.addEventListener('click',clearList)
+function clearList(e){
+    if (e.target.className === 'basket__btn-clear'){
+        basketList.innerHTML="";
+}       
+    }
+    
+
+basketList.addEventListener('click',deleteProduct)
+   
+function deleteProduct(e){
+if(e.target.className === "btn_delete-item"){
+    const itemOfList= e.target.parentElement.closest('li')
+    itemOfList.remove()
+}
+calcPrice()
+}
+
+function calcPrice(){
+    const items=document.querySelectorAll(".item__price")
+    items.forEach(function(item){
+    const priceEl=parseInt(item.innerText)
+    totalPrice+=priceEl
+    basketFullPrice.innerHTML=`Итого:${totalPrice}`
+})
+    }
+    
+
+
 
