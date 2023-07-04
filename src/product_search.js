@@ -1,5 +1,5 @@
-export function search() {
-    let searchValue = this.value.toLowerCase().trim();
+export function search(event) {
+    let searchValue = event.target.value.toLowerCase().trim();
     let mainHeader = document.getElementById('mainHeader');
 
     if (searchValue !== '') {
@@ -18,9 +18,9 @@ export function search() {
         let cardName = cardNames[i];
         let card = cardName.closest('.card');
 
-        let nameText = cardName.textContent.toLowerCase();
+        let nameText = cardName.textContent;
 
-        if (nameText.includes(searchValue)) {
+        if (nameText.toLowerCase().includes(searchValue)) {
             card.classList.remove('hidden');
             card.style.display = 'block';
 
