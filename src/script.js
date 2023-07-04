@@ -10,8 +10,9 @@ mainContainer.addEventListener('click', modalWindow);
 let modalClose = document.querySelector(".modal__close");
 modalClose.addEventListener('click', close__modal);
 
+document.getElementById('searchInput').addEventListener('input', search); 
 
-import { getBasketWindow,closeBasketModal,basketModal } from "./basket.js";
+import { getBasketWindow,closeBasketModal,basketModal,addToBasket } from "./basket.js";
 
 const headerBasket=document.querySelector('.header__basket')
 headerBasket.addEventListener('click',getBasketWindow)
@@ -21,7 +22,4 @@ basketModal.addEventListener('click',closeBasketModal)
 mainContainer.addEventListener('click', addToBasket)
 
 
-import { addToBasket } from "./basket.js";
-
-document.getElementById('searchInput').addEventListener('input', search); 
 
