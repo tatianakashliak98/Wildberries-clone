@@ -1,4 +1,5 @@
- 
+export let arrayProducts;
+
  let mainCardsDiv = document.querySelector(".main__cards");
  export function getProducts() {
   fetch('https://64a017bfed3c41bdd7a6fc7b.mockapi.io/products', {
@@ -11,6 +12,8 @@
 })
   .then(data => {
     printProducts(data)
+    arrayProducts = [...data];
+    localStorage.setItem('products', JSON.stringify(arrayProducts))
   })
 }
 
@@ -18,6 +21,7 @@
 function printProducts(response) {
   response.map(function(item) {
     let {  title, price, image, discount } = item;
+    let newPrice = Math.round(price - (discount/100*price));
     mainCardsDiv.innerHTML +=
     `<div class="card">
     <div class="card__picture">
@@ -37,7 +41,7 @@ function printProducts(response) {
         <p class="hide__card__name">${title}</p>
         <p class="new__price">
           <span class="hide__description">Стоимость : </span> 
-          <span class="price">${Math.round(price - (discount/100*price))}руб</span>
+          <span class="price">${newPrice}руб</span>
         </p>
         <p>
           <span class="hide__description">Вместо </span>

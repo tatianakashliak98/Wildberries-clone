@@ -1,5 +1,6 @@
 import { modalWindow, close__modal } from "./card_modal_window.js";
 import { getProducts } from "./api.js";
+import { search } from "./product_search.js";
 
   getProducts();
 
@@ -8,6 +9,7 @@ let mainContainer = document.querySelector("main");
 mainContainer.addEventListener('click', modalWindow);
 let modalClose = document.querySelector(".modal__close");
 modalClose.addEventListener('click', close__modal);
+document.getElementById('searchInput').addEventListener('input', search); 
 
 import { getBasketWindow,closeBasketModal,basketModal } from "./basket.js";
 
@@ -16,14 +18,11 @@ headerBasket.addEventListener('click',getBasketWindow)
 
 basketModal.addEventListener('click',closeBasketModal)
 
-
-
-const cardBtnAdd= document.getElementById('btn-basket')
-const itemCard=document.querySelector('.card')
-const cardImage=document.querySelector('.card__picture')
-const fieldBasket=document.querySelector('.discount__and__basket')
+import { addToBasket } from "./basket.js";
 mainContainer.addEventListener('click', addToBasket)
 
 
-import { addToBasket } from "./basket.js";
+
+
+  
 

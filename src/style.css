@@ -65,7 +65,8 @@ body::after{
 } 
 
 .highlight {
-  background-color: rgba(65, 10, 80, 0.65);
+  background-color: rgb(132 84 145 / 72%);
+  border-radius: 7px;
 }
 
 .hidden {
@@ -281,7 +282,7 @@ input[type="text"] {
 
   .header__basket-btn {
     font-size: 0;
-    background: url(./image/2205959_cart_bag_internet_shopping_buy_icon.png);
+    background: url(./img/2205959_cart_bag_internet_shopping_buy_icon.png);
     background-repeat: no-repeat;
     background-position: center;
     background-size: 40px;
@@ -291,7 +292,7 @@ input[type="text"] {
   }
 
   .header__basket-btn:active {
-    background: url(./image/2205959_cart_bag_internet_shopping_buy_icon.png);
+    background: url(./img/2205959_cart_bag_internet_shopping_buy_icon.png);
     background-repeat: no-repeat;
     background-position: center;
     background-size: 38px;
@@ -345,7 +346,7 @@ input[type="text"] {
 
   .header__basket-btn {
     font-size: 0;
-    background: url(./image/2205959_cart_bag_internet_shopping_buy_icon.png);
+    background: url(./img/2205959_cart_bag_internet_shopping_buy_icon.png);
     background-repeat: no-repeat;
     background-position: center;
     background-size: 30px;
@@ -360,7 +361,7 @@ input[type="text"] {
 
   .header__basket-btn:active {
     font-size: 0;
-    background: url(./image/2205959_cart_bag_internet_shopping_buy_icon.png);
+    background: url(./img/2205959_cart_bag_internet_shopping_buy_icon.png);
     background-repeat: no-repeat;
     background-position: center;
     background-size: 30px;
@@ -411,7 +412,6 @@ input[type="text"] {
   height: 100%;
   overflow: auto; 
   background-color: rgba(0, 0, 0, 0.8); 
-  
 }
 #modal__image {
   width: 70%;
@@ -428,10 +428,10 @@ input[type="text"] {
 
 .modal__content {
   background-color: #f9bde8d1;
-  margin: 4vmin auto; 
+  margin: 4vh auto; 
   padding: 20px;
   border: 1px solid #888;
-  max-width: 45%;
+  max-width: 44%;
   text-align: center;
   border-radius: 20px;
 }
@@ -439,9 +439,10 @@ input[type="text"] {
 .modal__close {
   color: #4d4d4d;
   float: right;
-  font-size: 28px;
+  font-size: 35px;
   font-weight: bold;
   cursor: pointer;
+  margin-left: -20px;
 }
 
 .modal__close:hover,
@@ -457,7 +458,7 @@ input[type="text"] {
 .main__cards {
   max-width: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   flex-wrap: wrap;
 }
 
@@ -475,9 +476,15 @@ input[type="text"] {
   font-weight: 900;
   position: relative;
   background: white;
-  mix-blend-mode: multiply; 
+  mix-blend-mode: multiply;
   overflow: hidden;
   text-transform: uppercase;
+}
+
+.main__header-search {
+  color: #5c10a3;
+  margin: 50px 10px;
+  font-size: 22px;
 }
 
 .main__header::before {
@@ -500,12 +507,13 @@ input[type="text"] {
 
 @keyframes ani {
   from {
-      background-position: 0 0;
+    background-position: 0 0;
   }
   to {
-      background-position: 100% 0;
+    background-position: 100% 0;
   }
 }
+
 .card__picture {
   position: relative;
   top: 0;
@@ -618,6 +626,17 @@ input[type="text"] {
   text-decoration: line-through;
 }
 
+
+@media  only screen and  (max-width: 1300px) {
+  .modal__content {
+    max-width: 50%;
+  }
+}
+@media  only screen and  (max-width: 1200px) {
+  .modal__content {
+    max-width: 55%;
+  }
+}
 @media  only screen and  (max-width: 1024px) {
   .swiper-container{
     height: 300px;
@@ -627,12 +646,15 @@ input[type="text"] {
     height: 420px;
   }
   .modal__content {
-    margin: 10vmin auto; 
+    margin: 5vh auto; 
   }
 }
 @media only screen and (max-width:900px){
   .swiper-container{
     height: 250px;
+  }
+  .modal__content {
+    max-width: 65%;
   }
 }
 @media only screen and (max-width:768px){
@@ -709,8 +731,7 @@ input[type="text"] {
     margin-left: 20%;
   }
   .modal__content {
-    margin: 10vmin auto; 
-    max-width: 65%;
+    max-width: 75%;
   }
 }
 
@@ -759,13 +780,24 @@ input[type="text"] {
   .card__description {
     margin-left: 20px;
   }
+  #modal__title {
+    font-size: 13px;
+  }
+  #modal__price {
+    font-size: 13px;
+  }
   .modal__content {
     margin: 20vmin auto; 
-    max-width: 65%;
+    max-width: 75%;
     font-size: 13px;
   }
   .modal__description {
     width: 67%;
+  }
+  .main__header-search {
+    color: #5c10a3;
+    margin: 25px 10px;
+    font-size: 18px;
   }
 }
 @media only screen and (max-width:400px){
@@ -800,7 +832,6 @@ input[type="text"] {
   padding: 20px;
   background-color: #fff;
   width: 450px;
-  height: 500px;
   position: absolute;
   top:20%;
   left: 35%;
@@ -808,13 +839,21 @@ input[type="text"] {
   
 }
 .basket__header-modal{
+  padding: 10px;
   display: flex;
   justify-content: space-between;
   
 }
+.basket__options{
+  padding: 10px;
+}
+.basket__list-modal li{
+padding: 10px 0;
+}
 .basket__btn-close{
   background-color: #fff;
   border-radius: 10px;
+  color: #a80ec6;
   cursor: pointer;
   width: 30px;
   height: 30px;
@@ -839,4 +878,31 @@ input[type="text"] {
   background-color: #eed2f4;
 }
 
+.card__img-modal{
+  width: 100px;
+  border-radius: 5px;
+}
+.item__price{
+  padding-top: 10px;
+}
+.card__basket-modal{
+  display: flex;
+  justify-content: space-evenly;
+}
+.btn_delete-item{
+  width: 20%;
+  height: 80%;
+  background-color: inherit;
+  color: inherit;
+  padding: 5px;
+  border: 1px solid #a80ec6;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.btn_delete-item:hover{
+  background-color: #e15bfc;
+}
+.basket__description-modal{
+  align-items: flex-start;
+}
 /*basket modal style end*/
