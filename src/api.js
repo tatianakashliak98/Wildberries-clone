@@ -54,5 +54,6 @@ function printProducts(response) {
       <div class="card__name">${title}</div>
     </div>
   </div>`;
+  
   });
 }

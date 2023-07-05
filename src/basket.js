@@ -64,49 +64,58 @@ export function closeBasketModal({target}){
     }      
 }
 
+let basket=[]
 export function addToBasket(e){
  
     if(e.target.className === 'btn-basket'){
+        console.log(3213)
         let card = e.target.closest('.card');
+       // let modalCard = e.target.closest('.modal')
+        // || modalCard.getElementById("modal__image").src,
+        // || modalCard.querySelector('#modal__title').innerText,
+        // || modalCard.querySelector('#modal__price').innerText, 
         const productInfo = {
-
-        id: card.id,
+       
         imageSrc: card.querySelector(".product-img").src, 
-        name: card.querySelector('.card__name').innerText,
-        price: card.querySelector('.price').innerText,
+        name: card.querySelector('.card__name').innerText, 
+        price: card.querySelector('.price').innerText, 
         }
 
-        let search = basket.find((x) => x.id === productInfo.id)
+        let search = basket.find((x) => x.imageSrc === productInfo.imageSrc)
         if(search === undefined){
-           
-            
-            const cardHTML = `<li class="card__item" data-id="${productInfo.id}">
-            <div class="card__basket-modal" >
-            <img src=${productInfo.imageSrc} alt="card-image" class="card__img-modal">
-            <div class="basket__description-modal">
-            <div class="cart__item-description">${productInfo.name}
-            </div>
-            <div class="item__price">${productInfo.price}
-            </div></div>
-            <button class="btn_delete-item">Удалить</button></div>
-            </li>`
-            ;
-
-            basketList.insertAdjacentHTML('beforeend', cardHTML);
+      
             basket.push(productInfo)
         } else{
             alert('Товар уже есть в корзине')
         }
-    
-    
-    
-    console.log(basket)
+        createCard()
     calcPrice()
     saveToLS()
+    console.log(basket)
  
 }
 }
-let basket=[]
+
+
+function createCard(){
+    basketList.innerHTML='';
+    basket.forEach((el)=>{
+        const cardHTML = `<li class="card__item">
+        <div class="card__basket-modal" >
+        <img src=${el.imageSrc} alt="card-image" class="card__img-modal">
+        <div class="basket__description-modal">
+        <div class="cart__item-description">${el.name}
+        </div>
+        <div class="item__price">${el.price}
+        </div></div>
+        <button class="btn_delete-item">Удалить</button></div>
+        </li>`
+        ;
+    
+        basketList.insertAdjacentHTML('beforeend', cardHTML);
+    })
+   
+}
 
 basketBtnClear.addEventListener('click',clearList)
 function clearList(e){
@@ -124,8 +133,10 @@ basketList.addEventListener('click',deleteProduct)
 function deleteProduct({target}){
 if(target.className === "btn_delete-item"){
     const itemOfList= target.parentElement.closest('li')
+    const imgSrc = itemOfList.querySelector('img').src
+    
     const index=basket.findIndex(function(prod){
-        return prod.id == Number(itemOfList.id)
+        return prod.imageSrc == imgSrc
     })
     basket.splice(index,1)
     itemOfList.remove()
@@ -144,34 +155,21 @@ function calcPrice(){
 basketFullPrice.innerHTML=`Итого:${sum}`
 }
 
+
 function saveToLS(){
     localStorage.setItem('basket',JSON.stringify(basket))
 }
 
 function getBasket(){
     if(localStorage.hasOwnProperty('basket')){
-        let basketArr = JSON.parse(localStorage.getItem('basket'))
-       basketArr.forEach((el)=>{
-        const cardHTML = `<li class="card__item" data-id="${el.id}">
-        <div class="card__basket-modal" >
-        <img src=${el.imageSrc} alt="card-image" class="card__img-modal">
-        <div class="basket__description-modal">
-        <div class="cart__item-description">${el.name}
-        </div>
-        <div class="item__price">${el.price}
-        </div></div>
-        <button class="btn_delete-item">Удалить</button></div>
-        </li>`
-        ;
-        let sum=0
-        basketList.insertAdjacentHTML('beforeend', cardHTML);
-        sum+=parseInt(el.price)
-        basketFullPrice.innerHTML=`Итого:${sum}`
-       
-       })
-    }
-  
-   
+        const arr = JSON.parse(localStorage.getItem('basket'))
+        for (let el of arr){
+            basket.push(el)
+            createCard()
+            calcPrice()
+        }
+        console.log(basket)
+    }  
 }
 
 
