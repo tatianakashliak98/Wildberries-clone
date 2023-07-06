@@ -856,7 +856,7 @@ padding: 10px 0;
 
 .card__img-modal{
   margin-left: 10px;
-  width: 100px;
+  width: 120px;
   border-radius: 5px;
 }
 .item__price{
@@ -885,4 +885,50 @@ padding: 10px 0;
 .item__old-price{
   text-decoration: line-through;
 }
+
+@media only screen and (max-width:900px){
+  .basket__container{
+    left: 20%;
+  }
+}
+@media only screen and (max-width:750px){
+  .basket__container{
+    left: 10%;
+    
+  }
+}
+
+@media only screen and (max-width:600px){
+  .basket__container{
+    top: 0;
+    left: 0;
+    width: 100%;
+    
+  }
+  .card__basket-modal{
+    flex-direction: column;
+    text-align: center;
+    width: 100%;
+  }
+  .btn_delete-item{
+    margin: 0 auto;
+  }
+  .card__img-modal{
+    margin: 0;
+    width: 70%;
+    align-self: center;
+  }
+  
+  .basket__options{
+    display: flex;
+    flex-direction: column;
+  }
+  .basket__btn-clear{
+    margin-top: 10px;
+    position: relative;
+    top: 0;
+    left: 0;
+  }
+}
+
 /*basket modal style end*/
