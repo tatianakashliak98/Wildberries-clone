@@ -68,7 +68,6 @@ let basket=[]
 export function addToBasket(e){
  
     if(e.target.className === 'btn-basket'){
-        console.log(3213)
         let card = e.target.closest('.card');
        // let modalCard = e.target.closest('.modal')
         // || modalCard.getElementById("modal__image").src,
@@ -83,7 +82,7 @@ export function addToBasket(e){
 
         let search = basket.find((x) => x.imageSrc === productInfo.imageSrc)
         if(search === undefined){
-      
+            e.target.style.backgroundImage = "url(./img/ok.png)"
             basket.push(productInfo)
         } else{
             alert('Товар уже есть в корзине')
@@ -101,14 +100,16 @@ function createCard(){
     basketList.innerHTML='';
     basket.forEach((el)=>{
         const cardHTML = `<li class="card__item">
-        <div class="card__basket-modal" >
-        <img src=${el.imageSrc} alt="card-image" class="card__img-modal">
-        <div class="basket__description-modal">
-        <div class="cart__item-description">${el.name}
-        </div>
-        <div class="item__price">${el.price}
-        </div></div>
-        <button class="btn_delete-item">Удалить</button></div>
+            <div class="card__basket-modal" >
+                <img src=${el.imageSrc} alt="card-image" class="card__img-modal">
+                <div class="basket__description-modal">
+                    <div class="cart__item-description">${el.name}
+                    </div>
+                    <div class="item__price">${el.price}
+                    </div>
+                 </div>
+             <button class="btn_delete-item">Удалить</button>
+            </div>
         </li>`
         ;
     
@@ -124,6 +125,10 @@ function clearList(e){
         basket=[]
         calcPrice()
         saveToLS()
+        let buttonsBasket = document.querySelectorAll (".btn-basket")
+        buttonsBasket.forEach(function(item){
+            item.style.backgroundImage= 'url(./img/basket2.png)';
+        })
 }       
     }
     
@@ -138,6 +143,12 @@ if(target.className === "btn_delete-item"){
     const index=basket.findIndex(function(prod){
         return prod.imageSrc == imgSrc
     })
+    let buttonsBasket = document.querySelectorAll (".btn-basket")
+        buttonsBasket.forEach(function(item){
+            if (item.closest(".card__picture").querySelector(".product-img").src === imgSrc){
+                item.style.backgroundImage= 'url(./img/basket2.png)';
+            }
+        })
     basket.splice(index,1)
     itemOfList.remove()
     calcPrice()
