@@ -815,6 +815,7 @@ input[type="text"] {
 /*Basket modal style start*/
 
 .basket__modal{
+  overflow: auto;
   color: #a80ec6;
   display: none;
   width: 100%;
@@ -831,9 +832,9 @@ input[type="text"] {
   justify-content: space-between;
   padding: 20px;
   background-color: #fff;
-  width: 450px;
+  width: 500px;
   position: absolute;
-  top:20%;
+  top:10%;
   left: 35%;
   border-radius: 10px;
   
@@ -863,7 +864,7 @@ padding: 10px 0;
 }
 .basket__btn-clear{
   position: absolute;
-  bottom: 20px;
+  bottom: 10px;
   right: 10px;
   font-family: inherit;
   font-weight: 700;
@@ -879,6 +880,7 @@ padding: 10px 0;
 }
 
 .card__img-modal{
+  margin-left: 10px;
   width: 100px;
   border-radius: 5px;
 }
@@ -887,7 +889,7 @@ padding: 10px 0;
 }
 .card__basket-modal{
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
 }
 .btn_delete-item{
   width: 20%;
@@ -904,5 +906,8 @@ padding: 10px 0;
 }
 .basket__description-modal{
   align-items: flex-start;
+}
+.item__old-price{
+  text-decoration: line-through;
 }
 /*basket modal style end*/
