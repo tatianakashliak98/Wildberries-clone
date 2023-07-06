@@ -142,6 +142,7 @@ basketList.addEventListener('click',deleteProduct)
 function deleteProduct({target}){
 if(target.className === "btn_delete-item"){
     const itemOfList= target.parentElement.closest('li')
+    let imgSrc = itemOfList.querySelector("img").src;
     const index=basket.findIndex(function(prod){
         return prod.imageSrc == itemOfList.querySelector('img').src
     })
