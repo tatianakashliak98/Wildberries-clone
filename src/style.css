@@ -547,6 +547,16 @@ input[type="text"] {
   background-repeat: no-repeat;
   background-color:  rgba(100, 17, 123, 0.811);
 }
+.btn-basket-ok {
+  width: 37px;
+  height: 37px;
+  border-radius: 50%;
+  background-image: url(./img/ok.png);
+  background-size: 24px 23px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color:  rgba(100, 17, 123, 0.811);
+}
 
 .card__price {
   display: flex;
