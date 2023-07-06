@@ -50,9 +50,12 @@ basketBtnClear.classList.add('basket__btn-clear')
 basketBtnClear.innerHTML='Очистить Корзину'
 basketOptions.append(basketFullPrice,basketBtnClear)
 
+const body=document.querySelector('body')
+
 export function getBasketWindow({target}){
     if(target.className === "header__basket-btn"){
         basketModal.style.display = "block"
+        body.style.overflow="hidden"
     }
     else{
         return
@@ -65,6 +68,7 @@ export {basketModal}
 export function closeBasketModal({target}){
     if(target === basketBtnClose || target === basketModal){
         basketModal.style.display = 'none'
+        body.style.overflow="scroll"
     }      
 }
 

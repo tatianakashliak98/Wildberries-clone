@@ -815,12 +815,12 @@ input[type="text"] {
 /*Basket modal style start*/
 
 .basket__modal{
-  overflow: auto;
+  overflow-y: scroll;
   color: #a80ec6;
   display: none;
   width: 100%;
   height: 100%;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   z-index: 3;
