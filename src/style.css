@@ -364,9 +364,12 @@ input[type="text"] {
   height: 70%;
   border-radius: 20px;
 }
+#modal__price {
+ margin-top: 5px;
+}
 .modal__description {
   width: 52%;
-  margin: 0 auto;
+  margin: 10px auto 0;
   text-align: center;
   display: flex;
   justify-content: space-around;

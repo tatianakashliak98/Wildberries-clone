@@ -87,7 +87,7 @@ export function addToBasket(e){
 
         let search = basket.find((x) => x.imageSrc === productInfo.imageSrc)
         if(search === undefined){
-      
+            e.target.style.backgroundImage = "url(./img/ok.png)"
             basket.push(productInfo)
         } else{
             alert('Товар уже есть в корзине')
@@ -129,6 +129,10 @@ function clearList(e){
         basket=[]
         calcPriceAndCount()
         saveToLS()
+        let buttonsBasket = document.querySelectorAll (".btn-basket")
+        buttonsBasket.forEach(function(item){
+            item.style.backgroundImage= 'url(./img/basket2.png)';
+        })
 }       
     }
     
@@ -141,6 +145,12 @@ if(target.className === "btn_delete-item"){
     const index=basket.findIndex(function(prod){
         return prod.imageSrc == itemOfList.querySelector('img').src
     })
+    let buttonsBasket = document.querySelectorAll (".btn-basket")
+        buttonsBasket.forEach(function(item){
+            if (item.closest(".card__picture").querySelector(".product-img").src === imgSrc){
+                item.style.backgroundImage= 'url(./img/basket2.png)';
+            }
+        })
     basket.splice(index,1)
     itemOfList.remove()
     saveToLS()
