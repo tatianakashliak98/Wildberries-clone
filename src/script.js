@@ -1,6 +1,7 @@
 import { modalWindow, close__modal } from "./card_modal_window.js";
 import { getProducts } from "./api.js";
 import { search } from "./product_search.js";
+import { getBasketWindow,closeBasketModal,basketModal,addToBasket } from "./basket.js";
 
   getProducts();
 
@@ -12,7 +13,6 @@ modalClose.addEventListener('click', close__modal);
 
 document.getElementById('searchInput').addEventListener('input', search); 
 
-import { getBasketWindow,closeBasketModal,basketModal,addToBasket } from "./basket.js";
 
 const headerBasket=document.querySelector('.header__basket')
 headerBasket.addEventListener('click',getBasketWindow)
