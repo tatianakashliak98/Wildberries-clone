@@ -55,4 +55,21 @@ function printProducts(response) {
     </div>
   </div>`;
   });
+    let basketItems = JSON.parse(localStorage.getItem('basket'));
+    if (basketItems) {
+      response.forEach(function(item){
+        basketItems.forEach(function(product){
+          if(item.image === product.imageSrc) {
+            let arrayBtns = document.querySelectorAll(".btn-basket");
+            arrayBtns.forEach(function(button) {
+              if (button.closest(".card__picture").querySelector("img").src === product.imageSrc) {
+                button.classList.remove("btn-basket");
+                button.classList.add("btn-basket-ok")
+              }
+            })
+          }
+        })
+      })
+        
+      }
 }
