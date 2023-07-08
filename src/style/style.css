@@ -234,7 +234,9 @@ button {
     border-radius: 20px;
     background-color: rgb(86, 24, 149);
   }
+
   .header .header__basket .header__basket-btn:active {
+
     background: url(/src/style/img/2205959_cart_bag_internet_shopping_buy_icon.png);
     background-repeat: no-repeat;
     background-position: center;
@@ -327,10 +329,12 @@ button {
   background-color: rgb(92, 16, 163);
 }
 
+
 @media (max-width: 1024px) {
   .swiper-container {
     height: 300px;
   }
+
 }
 @media (max-width: 900px) {
   .swiper-container {
@@ -446,7 +450,7 @@ button {
   width: 37px;
   height: 37px;
   border-radius: 50%;
-  background-image: url(./img/basket2.png);
+  background-image: url(/src/style/img/basket2.png);
   background-size: 24px 23px;
   background-position: center;
   background-repeat: no-repeat;
@@ -456,7 +460,7 @@ button {
   width: 37px;
   height: 37px;
   border-radius: 50%;
-  background-image: url(./img/ok.png);
+  background-image: url(/src/style/img/ok.png);
   background-size: 24px 23px;
   background-position: center;
   background-repeat: no-repeat;
@@ -486,6 +490,8 @@ button {
 .card__description .card__price .old-price {
   text-decoration: line-through;
 }
+
+
 
 .basket__modal {
   padding: 20px;
@@ -519,7 +525,9 @@ button {
   display: flex;
   justify-content: space-between;
 }
+
 .basket__modal .basket__container .basket__header-modal .basket__btn-close {
+
   background-color: #fff;
   border-radius: 10px;
   color: #a80ec6;
@@ -530,6 +538,7 @@ button {
 .basket__modal .basket__container .basket__header-modal .basket__btn-close:hover {
   background-color: #e15bfc;
 }
+
 .basket__modal .basket__container .basket__list-modal {
   padding: 0 10px;
   overflow-y: scroll;
@@ -537,6 +546,7 @@ button {
 .basket__modal .basket__container .basket__list-modal .card__basket-modal {
   display: flex;
   justify-content: space-between;
+
 }
 .basket__modal .basket__container .basket__list-modal .card__basket-modal .card__img-modal {
   margin-left: 10px;
@@ -561,6 +571,7 @@ button {
   border-radius: 10px;
   cursor: pointer;
 }
+
 .basket__modal .basket__container .basket__list-modal .card__basket-modal .btn_delete-item:hover {
   font-weight: 600;
 }
@@ -580,6 +591,7 @@ button {
   color: #fff;
   background: linear-gradient(90deg, #a05fbc, rgba(100, 17, 123, 0.417));
   border-radius: 10px;
+
 }
 .basket__modal .basket__container .basket__options .basket__btn-clear:hover {
   font-weight: 700;
