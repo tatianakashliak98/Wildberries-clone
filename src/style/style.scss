@@ -790,6 +790,7 @@ input[type="text"] {
 /*Basket modal style start*/
 
 .basket__modal{
+  padding: 20px;
   overflow-y: scroll;
   color: #a80ec6;
   display: none;
@@ -804,13 +805,15 @@ input[type="text"] {
 .basket__container{
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
   padding: 20px;
   background-color: #fff;
-  width: 500px;
+  min-width: 500px;
+  max-height: 600px;
   position: absolute;
-  top:10%;
-  left: 35%;
+  top:50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
   border-radius: 10px;
   
 }
@@ -822,6 +825,9 @@ input[type="text"] {
 }
 .basket__options{
   padding: 10px;
+}
+.basket__list-modal{
+  overflow-y: scroll;
 }
 .basket__list-modal li{
 padding: 10px 0;
@@ -838,20 +844,20 @@ padding: 10px 0;
   background-color: #e15bfc;
 }
 .basket__btn-clear{
+  max-width: 150px;
+  padding: 10px 30px;
   position: absolute;
   bottom: 10px;
   right: 10px;
   font-family: inherit;
-  font-weight: 700;
-  color: inherit;
   padding: 10px;
-  background-color: #fff;
-  border: 1px solid rgb(211, 176, 232);
+  color:#fff;
+  background: linear-gradient(90deg, #a05fbc, rgba(100, 17, 123, 0.417));
   border-radius: 10px;
 
 }
 .basket__btn-clear:hover{
-  background-color: #eed2f4;
+  font-weight: 700;
 }
 
 .card__img-modal{
@@ -869,15 +875,14 @@ padding: 10px 0;
 .btn_delete-item{
   width: 20%;
   height: 80%;
-  background-color: inherit;
-  color: inherit;
+  color:#fff;
+  background: linear-gradient(90deg, #a05fbc, rgba(100, 17, 123, 0.417));
   padding: 5px;
-  border: 1px solid #a80ec6;
   border-radius: 10px;
   cursor: pointer;
 }
 .btn_delete-item:hover{
-  background-color: #e15bfc;
+  font-weight: 600;
 }
 .basket__description-modal{
   align-items: flex-start;
@@ -886,32 +891,20 @@ padding: 10px 0;
   text-decoration: line-through;
 }
 
-@media only screen and (max-width:900px){
+@media only screen and (max-width:500px){
   .basket__container{
-    left: 20%;
-  }
-}
-@media only screen and (max-width:750px){
-  .basket__container{
-    left: 10%;
-    
-  }
-}
-
-@media only screen and (max-width:600px){
-  .basket__container{
+    position: relative;
+    min-width: 100%;
+    max-height: 100%;
     top: 0;
     left: 0;
-    width: 100%;
+    transform: translate(0,0);
     
   }
   .card__basket-modal{
     flex-direction: column;
     text-align: center;
     width: 100%;
-  }
-  .btn_delete-item{
-    margin: 0 auto;
   }
   .card__img-modal{
     margin: 0;
@@ -924,10 +917,13 @@ padding: 10px 0;
     flex-direction: column;
   }
   .basket__btn-clear{
-    margin-top: 10px;
+    margin:10px auto;
     position: relative;
     top: 0;
     left: 0;
+  }
+  .btn_delete-item{
+    margin: 0 auto;
   }
 }
 
