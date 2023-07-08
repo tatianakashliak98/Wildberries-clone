@@ -80,9 +80,7 @@ export function addToBasket(e) {
       e.target.classList.add("btn-basket-ok");
       e.target.classList.remove("btn-basket");
       basket.push(productInfo);
-    } else {
-      alert("Товар уже есть в корзине");
-    }
+    } 
     createCard();
     calcPriceAndCount();
     saveToLS();
