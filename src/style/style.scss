@@ -34,8 +34,8 @@ body::before {
   position: fixed;
   top: 0;
   left: 0;
-  background: url(./img/4.jpg) no-repeat center center;
-  background-image: url(./img/4.jpg);
+  background: url(/src/style/img/4.jpg) no-repeat center center;
+  background-image: url(/src/style/img/4.jpg);
   background-size: cover;
 
 }
@@ -231,7 +231,7 @@ input[type="text"] {
 
   .header__basket-btn {
     font-size: 0;
-    background: url(./img/2205959_cart_bag_internet_shopping_buy_icon.png);
+    background: url(/src/style/img/2205959_cart_bag_internet_shopping_buy_icon.png);
     background-repeat: no-repeat;
     background-position: center;
     background-size: 40px;
@@ -241,7 +241,7 @@ input[type="text"] {
   }
 
   .header__basket-btn:active {
-    background: url(./img/2205959_cart_bag_internet_shopping_buy_icon.png);
+    background: url(/src/style/img/2205959_cart_bag_internet_shopping_buy_icon.png);
     background-repeat: no-repeat;
     background-position: center;
     background-size: 38px;
@@ -292,7 +292,7 @@ input[type="text"] {
 
   .header__basket-btn {
     font-size: 0;
-    background: url(./img/2205959_cart_bag_internet_shopping_buy_icon.png);
+    background: url(/src/style/img/2205959_cart_bag_internet_shopping_buy_icon.png);
     background-repeat: no-repeat;
     background-position: center;
     background-size: 30px;
@@ -307,7 +307,7 @@ input[type="text"] {
 
   .header__basket-btn:active {
     font-size: 0;
-    background: url(./img/2205959_cart_bag_internet_shopping_buy_icon.png);
+    background: url(/src/style/img/2205959_cart_bag_internet_shopping_buy_icon.png);
     background-repeat: no-repeat;
     background-position: center;
     background-size: 30px;
@@ -541,7 +541,7 @@ input[type="text"] {
   width: 37px;
   height: 37px;
   border-radius: 50%;
-  background-image: url(./img/basket2.png);
+  background-image: url(/src/style/img/basket2.png);
   background-size: 24px 23px;
   background-position: center;
   background-repeat: no-repeat;
@@ -551,7 +551,7 @@ input[type="text"] {
   width: 37px;
   height: 37px;
   border-radius: 50%;
-  background-image: url(./img/ok.png);
+  background-image: url(/src/style/img/ok.png);
   background-size: 24px 23px;
   background-position: center;
   background-repeat: no-repeat;
