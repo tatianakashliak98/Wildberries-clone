@@ -84,7 +84,6 @@ export function addToBasket(e) {
     createCard();
     calcPriceAndCount();
     saveToLS();
-    console.log(basket);
   }
 }
 
