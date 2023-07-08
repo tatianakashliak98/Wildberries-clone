@@ -346,6 +346,7 @@ input[type="text"] {
     background-color: rgb(92, 16, 163);
 }
 
+/* slider swiper style end */
 /* modal window */
 
 .modal {
@@ -783,7 +784,7 @@ input[type="text"] {
     max-width: 100px;
   }
 }
-/* slider swiper style end */
+
 
 
 
@@ -827,6 +828,7 @@ input[type="text"] {
   padding: 10px;
 }
 .basket__list-modal{
+  padding: 0 10px;
   overflow-y: scroll;
 }
 .basket__list-modal li{

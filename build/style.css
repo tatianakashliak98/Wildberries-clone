@@ -254,6 +254,7 @@ input[type="text"] {
   font-size: 14px;
   background-color: #5c10a3; }
 
+/* slider swiper style end */
 /* modal window */
 .modal {
   display: none;
@@ -614,7 +615,6 @@ input[type="text"] {
   .hide__view__card-btn {
     max-width: 100px; } }
 
-/* slider swiper style end */
 /*Basket modal style start*/
 .basket__modal {
   padding: 20px;
@@ -652,6 +652,7 @@ input[type="text"] {
   padding: 10px; }
 
 .basket__list-modal {
+  padding: 0 10px;
   overflow-y: scroll; }
 
 .basket__list-modal li {
