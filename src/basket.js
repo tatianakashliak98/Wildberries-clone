@@ -66,8 +66,8 @@ export function closeBasketModal({ target }) {
 
 let basket = [];
 export function addToBasket(e) {
+  let card = e.target.closest(".card");
   if (e.target.className === "btn-basket") {
-    let card = e.target.closest(".card");
     const productInfo = {
       imageSrc: card.querySelector(".product-img").src,
       name: card.querySelector(".card__name").innerText,
@@ -84,6 +84,24 @@ export function addToBasket(e) {
     createCard();
     calcPriceAndCount();
     saveToLS();
+  } else if (e.target.className === "btn-basket-ok") {
+    let imgSrc = card.querySelector(".product-img").src;
+    const index = basket.findIndex(function (item) {
+      return item.imageSrc == imgSrc;
+    });
+    basket.splice(index, 1);
+    let list = document.querySelector(".basket__list-modal");
+    let cards = list.querySelectorAll(".card__item");
+    cards.forEach(function(item){
+      let itemSrc = item.querySelector("img").src;
+      if (itemSrc === imgSrc) {
+        item.remove();
+      }
+    });
+    e.target.classList.remove("btn-basket-ok");
+    e.target.classList.add("btn-basket");
+    saveToLS();
+    calcPriceAndCount();
   }
 }
 
