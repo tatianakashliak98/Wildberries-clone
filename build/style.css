@@ -330,9 +330,12 @@ input[type="text"] {
   text-transform: uppercase; }
 
 .main__header-search {
-  color: #5c10a3;
-  margin: 50px 10px;
-  font-size: 22px; }
+  margin: auto 25px;
+  font-size: 22px;
+  background: linear-gradient(to right, #aa63c9, #410a50 18.91%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; }
 
 .main__header::before {
   content: '';
@@ -605,9 +608,12 @@ input[type="text"] {
   .modal__description {
     width: 67%; }
   .main__header-search {
-    color: #5c10a3;
-    margin: 25px 10px;
-    font-size: 18px; } }
+    margin: auto 25px;
+    font-size: 18px;
+    background: linear-gradient(to right, #aa63c9, #410a50 18.91%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; } }
 
 @media only screen and (max-width: 400px) {
   .swiper-container {
