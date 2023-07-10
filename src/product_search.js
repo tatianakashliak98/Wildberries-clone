@@ -40,7 +40,6 @@ export function search(event) {
             cardName.innerHTML = cardName.textContent;
         }
     }
-  
 }
 
 
