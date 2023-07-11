@@ -893,6 +893,12 @@ padding: 10px 0;
   text-decoration: line-through;
 }
 
+.empty_basket{
+  text-align: center;
+}
+.empty_basket.empty-none{
+  display: none;
+}
 @media only screen and (max-width:500px){
   .basket__container{
     position: relative;

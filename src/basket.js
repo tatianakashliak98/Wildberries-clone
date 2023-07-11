@@ -65,9 +65,10 @@ export function closeBasketModal({ target }) {
 }
 
 let basket = [];
-export function addToBasket(e) {
-  if (e.target.className === "btn-basket") {
-    let card = e.target.closest(".card");
+
+export function addToBasket({target}) {
+  if (target.className === "btn-basket") {
+    let card = target.closest(".card");
     const productInfo = {
       imageSrc: card.querySelector(".product-img").src,
       name: card.querySelector(".card__name").innerText,
@@ -77,27 +78,26 @@ export function addToBasket(e) {
 
     let search = basket.find((x) => x.imageSrc === productInfo.imageSrc);
     if (search === undefined) {
-      e.target.classList.add("btn-basket-ok");
-      e.target.classList.remove("btn-basket");
+      target.classList.add("btn-basket-ok");
+      target.classList.remove("btn-basket");
       basket.push(productInfo);
     } 
     createCard();
     calcPriceAndCount();
     saveToLS();
-    console.log(basket);
   }
 }
 
 function createCard() {
   basketList.innerHTML = "";
-  basket.forEach((el) => {
+  basket.forEach(({imageSrc,name,newPrice,oldPrice}) => {
     const cardHTML = `<li class="card__item">
         <div class="card__basket-modal" >
-        <img src=${el.imageSrc} alt="card-image" class="card__img-modal">
+        <img src=${imageSrc} alt="card-image" class="card__img-modal">
         <div class="basket__description-modal">
-        <div class="cart__item-description">${el.name}</div>
-        <div class="item__price">${el.newPrice}</div>
-        <div class="item__old-price">${el.oldPrice}</div>
+        <div class="cart__item-description">${name}</div>
+        <div class="item__price">${newPrice}</div>
+        <div class="item__old-price">${oldPrice}</div>
 
         </div>
         <button class="btn_delete-item">Удалить</button></div>
@@ -107,14 +107,14 @@ function createCard() {
 }
 
 basketBtnClear.addEventListener("click", clearList);
-function clearList(e) {
-  if (e.target.className === "basket__btn-clear") {
+function clearList({target}) {
+  if (target.className === "basket__btn-clear") {
     basketList.innerHTML = "";
     basket = [];
     calcPriceAndCount();
     saveToLS();
     let buttonsBasket = document.querySelectorAll(".btn-basket-ok");
-    buttonsBasket.forEach(function (item) {
+    buttonsBasket.forEach((item)=> {
       item.classList.add("btn-basket");
       item.classList.remove("btn-basket-ok");
     });
@@ -131,7 +131,7 @@ function deleteProduct({ target }) {
       return prod.imageSrc == itemOfList.querySelector("img").src;
     });
     let buttonsBasket = document.querySelectorAll(".btn-basket-ok");
-    buttonsBasket.forEach(function (item) {
+    buttonsBasket.forEach((item) =>{
       if (
         item.closest(".card__picture").querySelector(".product-img").src ===
         imgSrc
