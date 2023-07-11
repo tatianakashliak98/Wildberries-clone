@@ -36,20 +36,6 @@ body {
   margin: 0 auto;
   max-width: 90%; }
 
-button {
-  cursor: pointer; }
-
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  text-decoration: none;
-  outline: none;
-  border: none; }
-
 .header {
   display: flex;
   justify-content: space-around;
@@ -311,6 +297,7 @@ button {
 
 .main__header-search {
   margin: auto 25px;
+  margin-bottom: 35px;
   font-size: 22px;
   background: linear-gradient(to right, #aa63c9, #410a50 18.91%);
   background-clip: text;
@@ -484,59 +471,67 @@ button {
   .modal__content {
     margin: 10vmin auto; } }
 
-@media (max-width: 786px) {
+@media only screen and (max-width: 900px) {
+  .swiper-container {
+    height: 250px; }
+  .modal__content {
+    max-width: 65%; }
+  .card {
+    width: 30%; }
+  .card__picture {
+    height: auto; }
+  .main__header {
+    margin-bottom: 30px; } }
+
+@media only screen and (max-width: 768px) {
+  .swiper-container {
+    height: 200px; }
   .wrapper {
     max-width: 95%; }
   .main__header {
-    margin-top: 30px;
     font-size: 24px;
     line-height: 30px;
     margin-left: 20%; }
   .card {
     width: 30%;
     height: auto; }
-    .card .card__picture {
-      max-width: 95%;
-      height: 60%; }
-      .card .card__picture:hover {
-        box-shadow: none; }
-        .card .card__picture:hover .view__container:hover {
-          opacity: 0;
-          cursor: auto; }
-        .card .card__picture:hover .view__container .view__card-btn {
-          opacity: 2; }
-        .card .card__picture:hover .view__container .hide__view__card-btn {
-          border: none;
-          background: linear-gradient(90deg, #a05fbc, rgba(100, 17, 123, 0.417));
-          color: #fff;
-          font-family: 'Montserrat Alternates', sans-serif;
-          font-size: 13px;
-          border-radius: 5px;
-          max-width: 230px;
-          padding: 7px;
-          min-height: 35px;
-          margin-top: 15px;
-          margin-bottom: 15px; }
-    .card .card__description {
-      width: 100%;
-      margin-left: 5px; }
-      .card .card__description .card__price {
-        display: block; }
-        .card .card__description .card__price .card__name {
-          display: none; }
-          .card .card__description .card__price .card__name:hover {
-            text-decoration: none; }
-        .card .card__description .card__price .hide__description,
-        .card .card__description .card__price .hide__card__name,
-        .card .card__description .card__price .hide__view__card-btn {
-          display: inline-block;
-          font-size: 14px; }
-        .card .card__description .card__price .hide__card__name {
-          font-size: 20px;
-          font-weight: 600;
-          text-shadow: 2px 2px 4px white; }
-        .card .card__description .card__price .new__price, .card .card__description .card__price .old-price {
-          margin: 5px 0; }
+  .card__picture {
+    max-width: 95%;
+    height: 60%; }
+  .view__card-btn {
+    opacity: 2; }
+  .card__description {
+    width: 100%;
+    margin-left: 5px; }
+  .card__price {
+    display: block; }
+  .hide__description,
+  .hide__card__name,
+  .hide__view__card-btn {
+    display: inline-block;
+    font-size: 14px; }
+  .hide__view__card-btn {
+    border: none;
+    background: linear-gradient(90deg, #a05fbc, rgba(100, 17, 123, 0.417));
+    color: #fff;
+    font-family: 'Montserrat Alternates', sans-serif;
+    font-size: 13px;
+    border-radius: 5px;
+    max-width: 230px;
+    padding: 7px;
+    min-height: 35px;
+    margin-top: 15px;
+    margin-bottom: 15px; }
+  .hide__card__name {
+    font-size: 20px;
+    font-weight: 600;
+    text-shadow: 2px 2px 4px white; }
+  .card__name {
+    display: none; }
+  .new__price, .old-price {
+    margin: 5px 0; }
+  .main__header {
+    margin-left: 20%; }
   .modal__content {
     margin: 10vmin auto;
     max-width: 65%; } }
@@ -547,6 +542,8 @@ button {
   .main__header {
     font-size: 20px;
     margin: 10%; }
+  .hide__card__name {
+    font-size: 18px; }
   .card {
     display: flex;
     flex-direction: column;
@@ -554,20 +551,20 @@ button {
     height: 30%;
     align-items: center;
     margin-bottom: 40px; }
-    .card .card__picture {
-      width: 100%;
-      height: 200px; }
-      .card .card__picture .view__container .hide__view__card-btn {
-        width: 160px; }
-    .card .card__description {
-      margin-left: 20px; }
-      .card .card__description .new__price,
-      .card .card__description .old-price,
-      .card .card__description .hide__description {
-        font-size: 14px; }
-      .card .card__description .hide__card__name {
-        font-size: 18px; }
-  .modal .modal__content {
+  .card__picture {
+    width: 100%;
+    height: auto; }
+  .new__price, .old-price, .hide__description {
+    font-size: 14px; }
+  .hide__view__card-btn {
+    width: 160px; }
+  .card__description {
+    margin-left: 20px; }
+  #modal__title {
+    font-size: 13px; }
+  #modal__price {
+    font-size: 13px; }
+  .modal__content {
     margin: 20vmin auto;
     max-width: 65%;
     font-size: 13px; }
@@ -576,7 +573,10 @@ button {
 
 @media (max-width: 400px) {
   .hide__view__card-btn {
-    max-width: 100px; } }
+    max-width: 100px; } 
+  .card__picture {
+    width: 100%;
+    height: 57%; } }
 
 .basket__modal {
   padding: 20px;
