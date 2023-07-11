@@ -299,6 +299,7 @@ button {
   background: repeating-linear-gradient(90deg, #6625c8, #d7429e, #6625c8);
   background-size: 500% auto;
   animation: ani 10s ease infinite;
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent; }
 
@@ -389,7 +390,7 @@ button {
           width: 37px;
           height: 37px;
           border-radius: 50%;
-          background-image: url(../img/basket2.png);
+          background-image: url(./img/basket2.png);
           background-size: 24px 23px;
           background-position: center;
           background-repeat: no-repeat;
@@ -398,7 +399,7 @@ button {
           width: 37px;
           height: 37px;
           border-radius: 50%;
-          background-image: url(../img/ok.png);
+          background-image: url(./img/ok.png);
           background-size: 24px 23px;
           background-position: center;
           background-repeat: no-repeat;
