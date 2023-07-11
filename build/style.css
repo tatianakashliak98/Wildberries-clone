@@ -331,6 +331,7 @@ input[type="text"] {
 
 .main__header-search {
   margin: auto 25px;
+  margin-bottom: 35px;
   font-size: 22px;
   background: linear-gradient(to right, #aa63c9, #410a50 18.91%);
   background-clip: text;
@@ -521,7 +522,7 @@ input[type="text"] {
     height: auto; }
   .card__picture {
     max-width: 95%;
-    height: 60%; }
+    height: auto; }
   .view__card-btn {
     opacity: 2; }
   .card__description {
@@ -590,7 +591,7 @@ input[type="text"] {
     margin-bottom: 40px; }
   .card__picture {
     width: 100%;
-    height: auto; }
+    height: 57%; }
   .new__price, .old-price, .hide__description {
     font-size: 14px; }
   .hide__view__card-btn {
@@ -619,7 +620,10 @@ input[type="text"] {
   .swiper-container {
     height: auto; }
   .hide__view__card-btn {
-    max-width: 100px; } }
+    max-width: 100px; } 
+  .card__picture {
+    width: 100%;
+    height: 57%; } }
 
 /*Basket modal style start*/
 .basket__modal {
