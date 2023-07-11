@@ -86,7 +86,7 @@ export function addToBasket({target}) {
     createCard();
     calcPriceAndCount();
     saveToLS();
-  } else if (e.target.className === "btn-basket-ok") {
+  } else if (target.className === "btn-basket-ok") {
     let imgSrc = card.querySelector(".product-img").src;
     const index = basket.findIndex(function (item) {
       return item.imageSrc == imgSrc;
