@@ -500,7 +500,7 @@ input[type="text"] {
   .card__picture {
     height: auto; }
   .main__header {
-    margin-bottom: 30px; } }
+    margin: 50px 90px 50px; } }
 
 @media only screen and (max-width: 768px) {
   .swiper-container {
@@ -515,6 +515,7 @@ input[type="text"] {
   .card__picture:hover {
     box-shadow: none; }
   .main__header {
+    margin: 40px 70px 40px;
     font-size: 24px;
     line-height: 30px; }
   .card {
@@ -580,7 +581,7 @@ input[type="text"] {
     width: 95%; }
   .main__header {
     font-size: 20px;
-    margin: 10%; }
+    margin: auto 30px; }
   .hide__card__name {
     font-size: 18px; }
   .card {
