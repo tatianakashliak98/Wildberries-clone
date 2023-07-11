@@ -1,0 +1,169 @@
+.basket__modal {
+    padding: 20px;
+    overflow-y: scroll;
+    color: #a80ec6;
+    display: none;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 3;
+    background: rgba(0, 0, 0,0.8);
+
+    .basket__container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 20px;
+        background-color: #fff;
+        min-width: 500px;
+        max-height: 600px;
+        position: absolute;
+        top:50%; left: 50%;
+        transform: translate(-50%,-50%);
+        border-radius: 10px;
+
+        .basket__header-modal {
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            
+            .basket__btn-close {
+                background-color: $wh-color;
+                border-radius: 10px;
+                color: #a80ec6;
+                cursor: pointer;
+                width: 30px;
+                height: 30px;
+
+                &:hover {
+                    background-color: #e15bfc;
+                }
+            } 
+        } // basket__header-modal
+
+        .basket__list-modal {
+            padding: 0 10px;
+            overflow-y: scroll;
+
+            .card__basket-modal {
+                display: flex;
+                justify-content: space-between;
+
+                .card__img-modal {
+                    margin-left: 10px;
+                    width: 120px;
+                    border-radius: 5px;
+                }
+
+                .basket__description-modal {
+                    align-items: flex-start;
+
+                    .item__price {
+                        padding-top: 10px;
+                    }
+
+                    .item__old-price {
+                        text-decoration: line-through;
+                    }
+                } // basket__description-modal
+
+                .btn_delete-item {
+                    width: 20%;
+                    height: 80%;
+                    color:#fff;
+                    background: linear-gradient(90deg, #a05fbc, rgba(100, 17, 123, 0.417));
+                    padding: 5px;
+                    border-radius: 10px;
+                    cursor: pointer;
+
+                    &:hover {
+                        font-weight: 600;
+                    }
+                } // btn_delete-item
+            } // card__basket-modal
+        } // basket__list-modal
+          
+        .basket__list-modal li {
+            padding: 10px 0;
+        }
+
+        .basket__options {
+            padding: 10px;
+
+            .basket__btn-clear {
+                max-width: 150px;
+                position: absolute;
+                bottom: 10px;
+                right: 10px;
+                font-family: inherit;
+                padding: 10px 30px;
+                color:#fff;
+                background: linear-gradient(90deg, #a05fbc, rgba(100, 17, 123, 0.417));
+                border-radius: 10px;
+
+                &:hover {
+                    font-weight: 700;
+                }
+            }
+        } // basket__options
+    } // basket__container
+} // basket__modal
+  
+.notification{
+    position: fixed;
+    top:10%; left: 50%;
+    z-index: 100;
+    transform: translate(-50%,-50%);
+    padding: 5px 12px 8px;
+    border-radius: 6px;
+    background: linear-gradient(91.05deg,#f7f7fa,#f0f4fa 35%,#f7ebf4);
+    opacity: 0.5;
+    z-index: 100;
+    border: 1px solid violet;
+  }
+@mixin responsive ($media) {
+    @if $media == md {
+      @media (max-width: 500px) { @content; }
+    }
+}
+
+@include responsive(md) {
+    .basket__container {
+        position: relative;
+        min-width: 100%;
+        max-height: 100%;
+        top: 0;
+        left: 0;
+        transform: translate(0, 0); 
+    }
+    
+    .card__basket-modal {
+        flex-direction: column;
+        text-align: center;
+        width: 100%; 
+
+        .card__img-modal {
+            margin: 0;
+            width: 70%;
+            align-self: center; 
+        }
+
+        .btn_delete-item {
+            margin: 4px auto; 
+        } 
+    }
+
+    .basket__options {
+        display: flex;
+        flex-direction: column; 
+
+        .basket__btn-clear {
+            margin: 10px auto;
+            position: relative;
+            top: 0;
+            left: 0; 
+        }
+    }
+}
