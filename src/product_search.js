@@ -6,10 +6,14 @@ export function search(event) {
         mainHeader.innerText = 'Результат поиска:';
         mainHeader.classList.remove('main__header');
         mainHeader.classList.add('main__header-search');
+
+        document.querySelector('.swiper-container').style.display = 'none';
     } else {
         mainHeader.innerText = 'Хиты продаж';
         mainHeader.classList.remove('main__header-search');
         mainHeader.classList.add('main__header');
+
+        document.querySelector('.swiper-container').style.display = '';
     }
 
     let cardNames = document.getElementsByClassName('card__name');
@@ -36,8 +40,6 @@ export function search(event) {
             cardName.innerHTML = cardName.textContent;
         }
     }
-
-    console.log(searchValue);
 }
 
 

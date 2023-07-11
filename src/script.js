@@ -14,12 +14,12 @@ modalClose.addEventListener('click', close__modal);
 document.getElementById('searchInput').addEventListener('input', search); 
 
 
-const headerBasket=document.querySelector('.header__basket')
-headerBasket.addEventListener('click',getBasketWindow)
+const headerBasket=document.querySelector('.header__basket');
+headerBasket.addEventListener('click',getBasketWindow);
 
-basketModal.addEventListener('click',closeBasketModal)
+basketModal.addEventListener('click',closeBasketModal);
 
-mainContainer.addEventListener('click', addToBasket)
+mainContainer.addEventListener('click', addToBasket);
 
 
 
