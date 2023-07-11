@@ -65,9 +65,11 @@ export function closeBasketModal({ target }) {
 }
 
 let basket = [];
+
 export function addToBasket({target}) {
   let card = target.closest(".card");
   if (target.className === "btn-basket") {
+
     const productInfo = {
       imageSrc: card.querySelector(".product-img").src,
       name: card.querySelector(".card__name").innerText,
@@ -84,8 +86,7 @@ export function addToBasket({target}) {
     createCard();
     calcPriceAndCount();
     saveToLS();
-    showNotification('Товар добавлен в корзину');
-  } else if (target.className === "btn-basket-ok") {
+  } else if (e.target.className === "btn-basket-ok") {
     let imgSrc = card.querySelector(".product-img").src;
     const index = basket.findIndex(function (item) {
       return item.imageSrc == imgSrc;
@@ -103,7 +104,6 @@ export function addToBasket({target}) {
     target.classList.add("btn-basket");
     saveToLS();
     calcPriceAndCount();
-    showNotification('Товар удален из корзины');
   }
 }
 
@@ -192,14 +192,3 @@ function getBasket() {
 }
 
 getBasket();
-
-
-function showNotification(inner) {
-
-  let notification = document.createElement('div');
-  notification.classList.add("notification")
-  notification.innerHTML = inner;
-  document.body.appendChild(notification);
-
-  setTimeout(() => notification.remove(), 1000);
-}
