@@ -38,12 +38,12 @@ function printProducts(response) {
       <div class="card__price">
         <p class="hide__card__name">${title}</p>
         <p class="new__price">
-          <span class="hide__description">Стоимость : </span> 
-          <span class="price">${newPrice}руб</span>
+          <div class="hide__description">Стоимость : </div> 
+          <div class="price">${newPrice}руб</div>
         </p>
         <p>
-          <span class="hide__description">Вместо </span>
-          <span class="old-price">${price}руб</span>
+          <div class="hide__description">Вместо </div>
+          <div class="old-price">${price}руб</div>
         </p>
         <button type="button" class="hide__view__card-btn">
           Смотреть подробнее..
