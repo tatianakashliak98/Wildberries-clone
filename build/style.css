@@ -1,5 +1,5 @@
 body, html {
-  overflow: scroll; }
+  overflow-x: hidden; }
 
 body {
   overflow: hidden;
@@ -35,7 +35,22 @@ body {
 
 .wrapper {
   margin: 0 auto;
-  max-width: 90%; }
+  max-width: 90%;
+  position: relative; }
+
+button {
+  cursor: pointer; }
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+  outline: none;
+  border: none; }
 
 .header {
   display: flex;
@@ -168,7 +183,7 @@ body {
       background-size: 40px;
       padding: 30px 45px;
       border-radius: 20px;
-      background-color: #561895; }
+      background-color: rgba(86, 24, 149, 0.432); }
       .header .header__basket .header__basket-btn:active {
         background: url(/src/style/img/2205959_cart_bag_internet_shopping_buy_icon.png);
         background-repeat: no-repeat;
@@ -176,7 +191,7 @@ body {
         background-size: 38px;
         padding: 31px 46px;
         border-radius: 20px;
-        background-color: #64117b;
+        background-color: rgba(86, 24, 149, 0.721);
         transition: all .1s; } }
 
 @media (max-width: 576px) {
@@ -209,7 +224,7 @@ body {
       background-size: 30px;
       padding: 22px 40px;
       border-radius: 20px;
-      background-color: #561895; }
+      background-color: rgba(86, 24, 149, 0.432); }
       .header .header__basket .header__basket-btn:hover {
         box-shadow: none; }
       .header .header__basket .header__basket-btn:active {
@@ -220,7 +235,7 @@ body {
         background-size: 30px;
         padding: 22px 40px;
         border-radius: 20px;
-        background-color: #561895; } }
+        background-color: rgba(86, 24, 149, 0.721); } }
 
 .swiper-container {
   width: 100%;
@@ -274,6 +289,12 @@ body {
   .swiper-container {
     height: auto; } }
 
+@keyframes ani {
+  from {
+    background-position: 0 0; }
+  to {
+    background-position: 100% 0; } }
+
 .main__header {
   margin: 80px 20px 50px 160px;
   font-size: 32px;
@@ -282,22 +303,28 @@ body {
   font-weight: 900;
   position: relative;
   background: white;
-  text-transform: uppercase;
-  background: repeating-linear-gradient(90deg, #6625c8, #d7429e, #6625c8);
-  background-size: 500% auto;
-  animation: ani 10s ease infinite;
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent; }
-
-@keyframes ani {
-  from {
-    background-position: 0 0; }
-  to {
-    background-position: 100% 0; } }
+  mix-blend-mode: multiply;
+  overflow: hidden;
+  text-transform: uppercase; }
+  .main__header::before {
+    content: "";
+    position: absolute;
+    filter: blur(10px);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    mix-blend-mode: lighten;
+    background-image: repeating-linear-gradient(-45deg, transparent, transparent 1em, #ffffff 1em, #e15bfc 50%), repeating-linear-gradient(45deg, #4800ff, #ff0404 1em, #def200 1em, #3a0000 50%);
+    background-size: 3em 3em, 2em 2em;
+    animation-name: ani;
+    animation-duration: 10s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate; }
 
 .main__header-search {
-  margin: auto 25px;
+  margin: auto 25px 40px;
   font-size: 22px;
   background: linear-gradient(to right, #aa63c9, #410a50 18.91%);
   background-clip: text;
@@ -307,7 +334,7 @@ body {
 .main__cards {
   max-width: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   flex-wrap: wrap; }
   .main__cards .card {
     width: 200px;
@@ -366,12 +393,9 @@ body {
         align-items: end; }
         .main__cards .card .card__picture .discount__and__basket .discount {
           color: #250033;
-          -webkit-text-stroke: 0.5px white;
+          -webkit-text-stroke: 0.2px white;
           font-family: "Montserrat Alternates", sans-serif;
-          font-size: 24px;
-          font-weight: 600; }
-        .main__cards .card .card__picture .discount__and__basket .discount, .main__cards .card .card__picture .discount__and__basket .price {
-          font-size: 18px;
+          font-size: 20px;
           font-weight: 700; }
         .main__cards .card .card__picture .discount__and__basket .btn-basket {
           width: 37px;
@@ -391,24 +415,28 @@ body {
           background-position: center;
           background-repeat: no-repeat;
           background-color: rgba(100, 17, 123, 0.811); }
-    .main__cards .card .card__description .card__price {
+    .main__cards .card .card__price {
       display: flex;
       justify-content: space-around;
       margin: 20px 0; }
-      .main__cards .card .card__description .card__price .card__name {
-        margin-left: 30px;
-        font-weight: 600;
-        font-size: 18px;
-        cursor: pointer;
-        color: #510071; }
-        .main__cards .card .card__description .card__price .card__name:hover {
-          text-decoration: underline; }
-      .main__cards .card .card__description .card__price .hide__description,
-      .main__cards .card .card__description .card__price .hide__card__name,
-      .main__cards .card .card__description .card__price .hide__view__card-btn {
-        display: none; }
-      .main__cards .card .card__description .card__price .old-price {
-        text-decoration: line-through; }
+    .main__cards .card .card__name {
+      margin-left: 30px;
+      font-weight: 600;
+      font-size: 18px;
+      cursor: pointer;
+      color: #510071; }
+      .main__cards .card .card__name:hover {
+        text-decoration: underline; }
+    .main__cards .card .price {
+      font-size: 20px;
+      font-weight: 700; }
+    .main__cards .card .hide__description,
+    .main__cards .card .hide__card__name,
+    .main__cards .card .hide__view__card-btn {
+      display: none; }
+    .main__cards .card .old-price {
+      text-decoration: line-through;
+      line-height: 28px; }
 
 .modal {
   display: none;
@@ -442,9 +470,11 @@ body {
       width: 70%;
       height: 70%;
       border-radius: 20px; }
+    .modal .modal__content #modal__price {
+      margin-top: 5px; }
     .modal .modal__content .modal__description {
       width: 52%;
-      margin: 0 auto;
+      margin: 10px auto -10px;
       text-align: center;
       display: flex;
       justify-content: space-around; }
@@ -457,18 +487,18 @@ body {
   display: none; }
 
 @media (max-width: 1300px) {
-  .modal__content {
+  .modal .modal__content {
     max-width: 50%; } }
 
 @media (max-width: 1200px) {
-  .modal__content {
+  .modal .modal__content {
     max-width: 55%; } }
 
 @media (max-width: 1024px) {
-  .card {
+  .main__cards .card {
     width: 22%;
     height: 420px; }
-  .modal__content {
+  .modal .modal__content {
     margin: 10vmin auto; }
   .main__header {
     margin: 50px 90px 50px; } }
@@ -481,54 +511,54 @@ body {
     font-size: 24px;
     line-height: 30px;
     margin-left: 20%; }
-  .card {
+  .modal .modal__content {
+    margin: 10vmin auto;
+    max-width: 65%; }
+  .main__cards .card {
     width: 30%;
     height: auto; }
-    .card .card__picture {
+    .main__cards .card .card__picture {
       max-width: 95%;
       height: auto; }
-      .card .card__picture:hover {
+      .main__cards .card .card__picture:hover {
         box-shadow: none; }
-        .card .card__picture:hover .view__container:hover {
+        .main__cards .card .card__picture:hover .view__container:hover {
           opacity: 0;
           cursor: auto; }
-        .card .card__picture:hover .view__container .view__card-btn {
+        .main__cards .card .card__picture:hover .view__container .view__card-btn {
           opacity: 2; }
-        .card .card__picture:hover .view__container .hide__view__card-btn {
-          border: none;
-          background: linear-gradient(90deg, #a05fbc, rgba(100, 17, 123, 0.417));
-          color: #fff;
-          font-family: 'Montserrat Alternates', sans-serif;
-          font-size: 13px;
-          border-radius: 5px;
-          max-width: 230px;
-          padding: 7px;
-          min-height: 35px;
-          margin-top: 15px;
-          margin-bottom: 15px; }
-    .card .card__description {
+    .main__cards .card .card__description {
       width: 100%;
       margin-left: 5px; }
-      .card .card__description .card__price {
-        display: block; }
-        .card .card__description .card__price .card__name {
+      .main__cards .card .card__description .hide__view__card-btn {
+        border: none;
+        background: linear-gradient(90deg, #a05fbc, rgba(100, 17, 123, 0.417));
+        color: #fff;
+        font-family: 'Montserrat Alternates', sans-serif;
+        font-size: 13px;
+        border-radius: 5px;
+        max-width: 230px;
+        padding: 7px;
+        min-height: 35px;
+        margin-top: 15px;
+        margin-bottom: 15px; }
+        .main__cards .card .card__description .hide__view__card-btn .card__name {
           display: none; }
-          .card .card__description .card__price .card__name:hover {
+          .main__cards .card .card__description .hide__view__card-btn .card__name:hover {
             text-decoration: none; }
-        .card .card__description .card__price .hide__description,
-        .card .card__description .card__price .hide__card__name,
-        .card .card__description .card__price .hide__view__card-btn {
-          display: inline-block;
-          font-size: 14px; }
-        .card .card__description .card__price .hide__card__name {
-          font-size: 20px;
-          font-weight: 600;
-          text-shadow: 2px 2px 4px white; }
-        .card .card__description .card__price .new__price, .card .card__description .card__price .old-price {
-          margin: 5px 0; }
-  .modal__content {
-    margin: 10vmin auto;
-    max-width: 65%; } }
+        .main__cards .card .card__description .hide__view__card-btn .card__price {
+          display: block; }
+          .main__cards .card .card__description .hide__view__card-btn .card__price .hide__description,
+          .main__cards .card .card__description .hide__view__card-btn .card__price .hide__card__name,
+          .main__cards .card .card__description .hide__view__card-btn .card__price .hide__view__card-btn {
+            display: inline-block;
+            font-size: 14px; }
+          .main__cards .card .card__description .hide__view__card-btn .card__price .hide__card__name {
+            font-size: 20px;
+            font-weight: 600;
+            text-shadow: 2px 2px 4px white; }
+          .main__cards .card .card__description .hide__view__card-btn .card__price .new__price, .main__cards .card .card__description .hide__view__card-btn .card__price .old-price {
+            margin: 5px 0; } }
 
 @media (max-width: 480px) {
   .wrapper {
@@ -536,43 +566,43 @@ body {
   .main__header {
     font-size: 20px;
     margin: 40px 70px 40px; }
-  .card {
+  .main__cards .card {
     display: flex;
     flex-direction: column;
     width: 45%;
     height: 30%;
     align-items: center;
     margin-bottom: 40px; }
-    .card .card__picture {
+    .main__cards .card .card__picture {
       width: 100%;
       height: 57%; }
-      .card .card__picture .view__container .hide__view__card-btn {
+      .main__cards .card .card__picture .view__container .hide__view__card-btn {
         width: 160px; }
-    .card .card__description {
+    .main__cards .card .card__description {
       margin-left: 20px; }
-      .card .card__description .new__price,
-      .card .card__description .old-price,
-      .card .card__description .hide__description {
+      .main__cards .card .card__description .new__price,
+      .main__cards .card .card__description .old-price,
+      .main__cards .card .card__description .hide__description {
         font-size: 14px; }
-      .card .card__description .hide__card__name {
+      .main__cards .card .card__description .hide__card__name {
         font-size: 18px; }
   .modal .modal__content {
     margin: 20vmin auto;
-    max-width: 65%;
+    max-width: 90%;
     font-size: 13px; }
     .modal .modal__content .modal__description {
       width: 67%; } }
 
 @media (max-width: 400px) {
-  .hide__view__card-btn {
-    max-width: 100px; }
-  .card__picture {
+  .main__cards .card .card__picture {
     width: 100%;
-    height: 52%; } }
+    height: 52%; }
+    .main__cards .card .card__picture .hide__view__card-btn {
+      max-width: 100px; } }
 
 .basket__modal {
   padding: 20px;
-  overflow-y: scroll;
+  overflow-x: hidden;
   color: #a80ec6;
   display: none;
   width: 100%;
@@ -637,23 +667,25 @@ body {
     .basket__modal .basket__container .basket__list-modal li {
       padding: 10px 0; }
     .basket__modal .basket__container .basket__options {
-      padding: 10px; }
+      padding: 10px;
+      position: relative; }
       .basket__modal .basket__container .basket__options .basket__btn-clear {
-        max-width: 150px;
-        position: absolute;
-        bottom: 10px;
-        right: 10px;
-        font-family: inherit;
-        padding: 10px 30px;
         color: #fff;
-        background: linear-gradient(90deg, #a05fbc, rgba(100, 17, 123, 0.417));
-        border-radius: 10px; }
+        background: linear-gradient(90deg, #a05fbc, #64117b6a);
+        border-radius: 10px;
+        max-width: 150px;
+        padding: 10px 30px;
+        font-family: inherit;
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        height: 50px; }
         .basket__modal .basket__container .basket__options .basket__btn-clear:hover {
           font-weight: 700; }
 
 .notification {
   position: fixed;
-  top: 10%;
+  top: 5%;
   left: 50%;
   z-index: 100;
   transform: translate(-50%, -50%);
@@ -665,28 +697,31 @@ body {
   border: 1px solid violet; }
 
 @media (max-width: 500px) {
-  .basket__container {
+  .basket__modal .basket__container {
     position: relative;
-    min-width: 100%;
+    max-width: 100%;
     max-height: 100%;
+    min-width: 0;
     top: 0;
     left: 0;
     transform: translate(0, 0); }
-  .card__basket-modal {
-    flex-direction: column;
-    text-align: center;
-    width: 100%; }
-    .card__basket-modal .card__img-modal {
-      margin: 0;
-      width: 70%;
-      align-self: center; }
-    .card__basket-modal .btn_delete-item {
-      margin: 4px auto; }
-  .basket__options {
-    display: flex;
-    flex-direction: column; }
-    .basket__options .basket__btn-clear {
-      margin: 10px auto;
-      position: relative;
-      top: 0;
-      left: 0; } }
+    .basket__modal .basket__container .basket__list-modal .card__basket-modal {
+      flex-direction: column;
+      text-align: center;
+      width: 100%; }
+      .basket__modal .basket__container .basket__list-modal .card__basket-modal .card__img-modal {
+        margin: 0;
+        width: 70%;
+        align-self: center; }
+      .basket__modal .basket__container .basket__list-modal .card__basket-modal .btn_delete-item {
+        margin: 4px auto; }
+    .basket__modal .basket__container .basket__options {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center; }
+      .basket__modal .basket__container .basket__options .basket__btn-clear {
+        margin: 10px auto;
+        position: relative;
+        top: 0;
+        left: 0; } }

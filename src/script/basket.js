@@ -50,7 +50,6 @@ const body = document.querySelector("body");
 export function getBasketWindow({ target }) {
   if (target.className === "header__basket-btn") {
     basketModal.style.display = "block";
-    body.style.overflow = "hidden";
   } else {
     return;
   }
@@ -60,7 +59,10 @@ export { basketModal };
 export function closeBasketModal({ target }) {
   if (target === basketBtnClose || target === basketModal) {
     basketModal.style.display = "none";
-    body.style.overflow = "scroll";
+<<<<<<< HEAD:src/basket.js
+    body.style.overflow-y = "scroll";
+=======
+>>>>>>> develop:src/script/basket.js
   }
 }
 
@@ -86,7 +88,12 @@ export function addToBasket({target}) {
     createCard();
     calcPriceAndCount();
     saveToLS();
+<<<<<<< HEAD:src/basket.js
   } else if (target.className === "btn-basket-ok") {
+=======
+    showNotification('Товар добавлен в корзину')
+  } else if (e.target.className === "btn-basket-ok") {
+>>>>>>> develop:src/script/basket.js
     let imgSrc = card.querySelector(".product-img").src;
     const index = basket.findIndex(function (item) {
       return item.imageSrc == imgSrc;
@@ -104,6 +111,7 @@ export function addToBasket({target}) {
     target.classList.add("btn-basket");
     saveToLS();
     calcPriceAndCount();
+    showNotification('Товар удален из корзины')
   }
 }
 
@@ -191,4 +199,18 @@ function getBasket() {
   }
 }
 
+<<<<<<< HEAD:src/basket.js
 getBasket();
+=======
+function showNotification(inner) {
+
+  let notification = document.createElement('div');
+  notification.classList.add("notification")
+  notification.innerHTML = inner;
+  document.body.appendChild(notification);
+
+  setTimeout(() => notification.remove(), 1000);
+}
+
+getBasket();
+>>>>>>> develop:src/script/basket.js

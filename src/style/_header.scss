@@ -220,7 +220,7 @@
                 background-size: 40px;
                 padding: 30px 45px;
                 border-radius: 20px;
-                background-color: rgb(86, 24, 149);
+                background-color: rgba(86, 24, 149, 0.432);
     
                 &:active {
                     background: url(/src/style/img/2205959_cart_bag_internet_shopping_buy_icon.png);
@@ -229,7 +229,7 @@
                     background-size: 38px;
                     padding: 31px 46px;
                     border-radius: 20px;
-                    background-color: rgb(100, 17, 123);
+                    background-color: rgba(86, 24, 149, 0.721);
                     transition: all .1s;
                 }
             } 
@@ -285,7 +285,7 @@
                 background-size: 30px;
                 padding: 22px 40px;
                 border-radius: 20px;
-                background-color: rgb(86, 24, 149);
+                background-color: rgba(86, 24, 149, 0.432);
     
                 &:hover {
                     box-shadow: none;
@@ -299,7 +299,7 @@
                     background-size: 30px;
                     padding: 22px 40px;
                     border-radius: 20px;
-                    background-color: rgb(86, 24, 149);
+                    background-color: rgba(86, 24, 149, 0.721);
                 }
             }
         }

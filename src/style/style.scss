@@ -4,7 +4,7 @@ $linear-gradient: linear-gradient(90deg, rgb(170, 99, 201), rgb(65, 10, 80));
 $wh-color: #fff;
 
 body, html {
-  overflow: scroll;
+  overflow-x: hidden;
 }
 
 body {
@@ -47,6 +47,7 @@ body {
 .wrapper {
   margin: 0 auto;
   max-width: 90%;
+  position: relative;
 }
 
 button {
