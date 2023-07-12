@@ -136,14 +136,16 @@
 }
 .notification{
     position: fixed;
-    top:5%; left: 50%;
+    text-align: center;
+    color: #fff;
+    min-width: 200px;
+    top:50%; 
+    left: 50%;
     z-index: 100;
     transform: translate(-50%,-50%);
     padding: 5px 12px 8px;
     border-radius: 6px;
-    background: linear-gradient(91.05deg,#f7f7fa,#f0f4fa 35%,#f7ebf4);
-    opacity: 0.5;
-    z-index: 100;
+    background: linear-gradient(90deg, #a05fbc, rgba(100, 17, 123, 0.417));
     border: 1px solid violet;
   }
 

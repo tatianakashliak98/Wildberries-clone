@@ -18,10 +18,10 @@ export let arrayProducts;
 
 function printProducts(response) {
   response.map(function(item) {
-    let {  id,title, price, image, discount } = item;
+    let {title, price, image, discount } = item;
     let newPrice = Math.round(price - (discount/100*price));
     mainCardsDiv.innerHTML +=
-    `<div class="card"  id="${id}">
+    `<div class="card">
     <div class="card__picture">
       <img class="product-img" src="${image}" alt="#">
       <div class="view__container">
