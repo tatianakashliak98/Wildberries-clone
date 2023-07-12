@@ -2,7 +2,6 @@ body, html {
   overflow-x: hidden; }
 
 body {
-  overflow: hidden;
   position: relative;
   top: 0;
   left: 0;
