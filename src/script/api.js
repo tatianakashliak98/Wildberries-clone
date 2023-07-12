@@ -12,8 +12,6 @@ export let arrayProducts;
 })
   .then(data => {
     printProducts(data)
-    arrayProducts = [...data];
-    localStorage.setItem('products', JSON.stringify(arrayProducts))
   })
 }
 

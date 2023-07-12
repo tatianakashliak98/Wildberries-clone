@@ -82,6 +82,7 @@ export function addToBasket(e) {
     createCard();
     calcPriceAndCount();
     saveToLS();
+    showNotification('Товар добавлен в корзину')
   } else if (e.target.className === "btn-basket-ok") {
     let imgSrc = card.querySelector(".product-img").src;
     const index = basket.findIndex(function (item) {
@@ -100,6 +101,7 @@ export function addToBasket(e) {
     e.target.classList.add("btn-basket");
     saveToLS();
     calcPriceAndCount();
+    showNotification('Товар удален из корзины')
   }
 }
 
@@ -185,6 +187,16 @@ function getBasket() {
       calcPriceAndCount();
     }
   }
+}
+
+function showNotification(inner) {
+
+  let notification = document.createElement('div');
+  notification.classList.add("notification")
+  notification.innerHTML = inner;
+  document.body.appendChild(notification);
+
+  setTimeout(() => notification.remove(), 1000);
 }
 
 getBasket();

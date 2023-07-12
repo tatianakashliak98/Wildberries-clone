@@ -1,4 +1,23 @@
-
+@mixin responsive ($media) {
+    @if $media == s {
+        @media (max-width: 400px) { @content; }
+    }
+    @if $media == m {
+        @media (max-width: 480px) { @content; }
+    }
+    @if $media == md {
+      @media (max-width: 786px) { @content; }
+    }
+    @else if $media == l {
+      @media (max-width: 1024px) { @content; }
+    }
+    @else if $media == xl {
+        @media (max-width: 1200px) { @content; }
+    }
+    @else if $media == xll {
+        @media (max-width: 1300px) { @content; }
+    }
+}
 @keyframes ani {
     from {
         background-position: 0 0;
@@ -244,6 +263,7 @@
             display: flex;
             justify-content: space-around;
         }
+        
     } // modal__content
 } // modal
   
@@ -258,47 +278,33 @@
 }
 
 
-
-@mixin responsive ($media) {
-    @if $media == s {
-        @media (max-width: 400px) { @content; }
-    }
-    @if $media == m {
-        @media (max-width: 480px) { @content; }
-    }
-    @if $media == md {
-      @media (max-width: 786px) { @content; }
-    }
-    @else if $media == l {
-      @media (max-width: 1024px) { @content; }
-    }
-    @else if $media == xl {
-        @media (max-width: 1200px) { @content; }
-    }
-    @else if $media == xll {
-        @media (max-width: 1300px) { @content; }
-    }
-}
-
 @include responsive(xll) {
-    .modal__content {
-        max-width: 50%; 
-    } 
+    .modal{
+        .modal__content {
+            max-width: 50%; 
+        } 
+    }
+    
 }
 
 @include responsive(xl) {
-    .modal__content {
-        max-width: 55%; 
-    } 
+    .modal{
+        .modal__content {
+            max-width: 55%; 
+        } 
+    }
 }
 
+
+
+
 @include responsive(l) {
-    .card {
+    .main__cards .card {
         width: 22%;
         height: 420px;
     }
 
-    .modal__content {
+    .modal .modal__content {
         margin: 10vmin auto; 
     }
 
@@ -318,8 +324,11 @@
         line-height: 30px;
         margin-left: 20%;
     }
-
-    .card {
+    .modal .modal__content {
+        margin: 10vmin auto; 
+        max-width: 65%;
+    }
+    .main__cards .card {
         width: 30%;
         height: auto;
 
@@ -339,20 +348,7 @@
                     .view__card-btn {
                         opacity: 2;
                     }
-
-                    .hide__view__card-btn {
-                        border: none;
-                        background: linear-gradient(90deg, rgb(160, 95, 188), rgba(100, 17, 123, 0.417));
-                        color: #fff;
-                        font-family: 'Montserrat Alternates', sans-serif;
-                        font-size: 13px;
-                        border-radius: 5px;
-                        max-width: 230px;
-                        padding: 7px;
-                        min-height: 35px;
-                        margin-top: 15px;
-                        margin-bottom: 15px;
-                    }
+                    
                 }
             }
         }
@@ -360,42 +356,51 @@
         .card__description {
             width: 100%;
             margin-left: 5px;
-
-            .card__price {
-                display: block;
-
+            .hide__view__card-btn {
+                border: none;
+                background: linear-gradient(90deg, rgb(160, 95, 188), rgba(100, 17, 123, 0.417));
+                color: #fff;
+                font-family: 'Montserrat Alternates', sans-serif;
+                font-size: 13px;
+                border-radius: 5px;
+                max-width: 230px;
+                padding: 7px;
+                min-height: 35px;
+                margin-top: 15px;
+                margin-bottom: 15px;
                 .card__name {
                     display: none;
-
+    
                     &:hover {
                         text-decoration: none;
                     }
                 }
-
-                .hide__description,
-                .hide__card__name,
-                .hide__view__card-btn {
-                    display: inline-block;
-                    font-size: 14px;
-                }
-
-                .hide__card__name {
-                    font-size: 20px;
-                    font-weight: 600;
-                    text-shadow: 2px 2px 4px rgb(255, 255, 255);
-                }
-
-                .new__price, .old-price {
-                    margin: 5px 0;
-                }
-            } // card__price
+                .card__price {
+                    display: block;
+    
+                    .hide__description,
+                    .hide__card__name,
+                    .hide__view__card-btn {
+                        display: inline-block;
+                        font-size: 14px;
+                    }
+    
+                    .hide__card__name {
+                        font-size: 20px;
+                        font-weight: 600;
+                        text-shadow: 2px 2px 4px rgb(255, 255, 255);
+                    }
+    
+                    .new__price, .old-price {
+                        margin: 5px 0;
+                    }
+                } 
+            }
+            
+            // card__price
         } // card__description
     } // card    
     
-    .modal__content {
-        margin: 10vmin auto; 
-        max-width: 65%;
-    }
 }
 
 @include responsive(m) {
@@ -408,7 +413,7 @@
         margin: 40px 70px 40px;
     }
 
-    .card {
+    .main__cards .card {
         display: flex;
         flex-direction: column;
         width: 45%;
@@ -426,7 +431,6 @@
                 }
             }
         }
-
         .card__description {
             margin-left: 20px;
 
@@ -440,13 +444,14 @@
                 font-size: 18px;
             }
         }
+        
     }
 
 
     .modal {
         .modal__content {
             margin: 20vmin auto; 
-            max-width: 65%;
+            max-width: 90%;
             font-size: 13px;
 
             .modal__description {
@@ -458,12 +463,14 @@
 
 
 @include responsive(s) {
-    .hide__view__card-btn {
-        max-width: 100px;
-    }
+    
 
-    .card__picture {
+    .main__cards .card .card__picture {
         width: 100%;
         height: 52%;
+
+        .hide__view__card-btn {
+            max-width: 100px;
+        }
     }
 }
