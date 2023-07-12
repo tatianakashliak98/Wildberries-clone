@@ -60,7 +60,7 @@ export { basketModal };
 export function closeBasketModal({ target }) {
   if (target === basketBtnClose || target === basketModal) {
     basketModal.style.display = "none";
-    body.style.overflow = "scroll";
+    body.style.overflow-y = "scroll";
   }
 }
 
