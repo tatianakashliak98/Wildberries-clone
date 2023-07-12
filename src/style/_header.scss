@@ -1,0 +1,307 @@
+.header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 30px 20px;
+    max-width: 100%;
+  
+    .header__logo {
+        font-size: 30px;
+        font-weight: bold;
+        border-radius: 20px;
+        align-items: center;
+        cursor: pointer;
+        background: $linear-gradient;
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+  
+    .header__search-box {
+        position: relative;
+        margin: 0 auto;
+        width: 65%;
+  
+        .header__searchbar {
+            width: 100%;
+            height: 70px;
+            border: none;
+            border-radius: 20px;
+            padding: 10px 10px 10px 30px;
+  
+            &:hover {
+                height: 72px;
+                transition: 0.3s;
+                box-shadow: 2px 5px 5px rgba(83, 83, 83, 0.262);
+            }
+  
+            &::placeholder {
+                opacity: 0.3;
+                font-size: 20px;
+                text-align: center;
+            }
+
+            :focus::-webkit-input-placeholder {
+                color: transparent;
+            }
+        }
+
+        input[type='text'] {
+            font-size: 20px;
+        }
+    } // header__search-box
+  
+    .header__basket {
+        .header__basket-btn {
+            padding: 25px 40px;
+            font-size: 17px;
+            font-weight: 300;
+            color: #fff;
+            position: relative;
+            border-radius: 20px;
+            cursor: pointer;
+            font-family: $font-face;
+            background: linear-gradient(90deg, rgb(160, 95, 188), rgb(100, 17, 123));
+      
+            &:hover {
+                font-weight: 600;
+                box-shadow: 2px 5px 5px rgba(83, 83, 83, 0.262);
+            }
+      
+            &:active {
+                background: $primary-color;
+            }
+        } // header__basket-btn
+    } // header__basket
+} // header
+
+@mixin responsive ($media) {
+    @if $media == xs {
+      @media (max-width: 576px) { @content; }
+    }
+    @if $media == s {
+      @media (max-width: 720px) { @content; }
+    }
+    @if $media == m {
+      @media (max-width: 886px) { @content; }
+    }
+    @else if $media == md {
+      @media (max-width: 1140px) { @content; }
+    }
+}
+
+@include responsive(md) {
+    .header {
+        .header__search-box {
+            width: 55%;
+    
+            .header__searchbar {
+                height: 65px;
+                padding: 10px;
+    
+                &:hover {
+                    height: 67px;
+                }
+    
+                &:hover + .header__search-btn {
+                    right: 25px;
+                }
+            }
+    
+            .header__search-btn {
+                height: 27px;
+                top: 20px;
+                right: 35px;
+    
+                &:hover {
+                    right: 25px;
+                }
+            }
+        }
+    
+        .header__basket-btn {
+            padding: 23px 40px;
+        }
+    }
+}
+
+@include responsive(m) {
+    .header {
+        padding: 20px 25px;
+
+        .header__logo {
+            font-size: 26px;
+        }
+
+        .header__search-box {
+            width: 52%;
+
+            .header__searchbar {
+                height: 65px;
+                padding: 10px;
+
+                &:hover {
+                    height: 67px;
+                }
+            
+                &:hover + .header__search-btn {
+                    right: 25px;
+                }
+                
+                &::placeholder {
+                    font-size: 18px;
+                }
+            }  
+
+            input[type="text"] {
+                font-size: 17px;
+            }
+
+        }
+
+        .header__basket-btn {
+            padding: 23px 30px;
+            font-size: 15px;
+        }
+
+        .header__search-btn {
+            height: 29px;
+            top: 18px;
+            right: 35px;
+
+            &:hover {
+                right: 25px;
+            }
+        }
+    }
+}
+
+@include responsive(s) {
+    .wrapper {
+        max-width: 95%;
+    }
+    
+    .header {
+        flex-wrap: wrap;
+        padding-top: 20px;
+
+        .header__logo {
+            width: 100%;
+            margin-bottom: 15px;
+            text-align: center;
+            font-size: 40px;
+        }
+        
+        .header__search-box {
+            width: 80%;
+
+            .header__searchbar {
+                height: 60px;
+                padding: 10px;
+
+                &:hover {
+                    height: 62px;
+                }
+            }
+        }
+        
+        .header__search-btn {
+            height: 26px;
+            top: 17px;
+            right: 30px;
+        }
+        
+        .header__basket {
+            .header__basket-btn {
+                font-size: 0;
+                background: url(/src/style/img/2205959_cart_bag_internet_shopping_buy_icon.png);
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: 40px;
+                padding: 30px 45px;
+                border-radius: 20px;
+                background-color: rgba(86, 24, 149, 0.432);
+    
+                &:active {
+                    background: url(/src/style/img/2205959_cart_bag_internet_shopping_buy_icon.png);
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    background-size: 38px;
+                    padding: 31px 46px;
+                    border-radius: 20px;
+                    background-color: rgba(86, 24, 149, 0.721);
+                    transition: all .1s;
+                }
+            } 
+        }
+    }
+}
+
+@include responsive(xs) {
+    .header {
+        padding: 20px 20px 15px 15px;
+
+        .header__logo {
+            font-size: 35px;
+        }
+        
+        .header__search-box {
+            width: 75%;
+            margin: 0;
+
+            .header__searchbar {
+                height: 44px;
+                padding: 10px;
+
+                &:hover {
+                    height: 44px;
+                    box-shadow: none;
+                }
+
+                &::placeholder {
+                    font-size: 13px;
+                }
+
+                :focus::-webkit-input-placeholder {
+                    color: none;
+                }
+            }
+
+            input[type="text"] {
+                font-size: 13px;
+            }
+        }
+        
+        .header__search-btn {
+            display: none;
+        }
+
+        .header__basket {
+            .header__basket-btn {
+                font-size: 0;
+                background: url(/src/style/img/2205959_cart_bag_internet_shopping_buy_icon.png);
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: 30px;
+                padding: 22px 40px;
+                border-radius: 20px;
+                background-color: rgba(86, 24, 149, 0.432);
+    
+                &:hover {
+                    box-shadow: none;
+                }
+                
+                &:active {
+                    font-size: 0;
+                    background: url(/src/style/img/2205959_cart_bag_internet_shopping_buy_icon.png);
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    background-size: 30px;
+                    padding: 22px 40px;
+                    border-radius: 20px;
+                    background-color: rgba(86, 24, 149, 0.721);
+                }
+            }
+        }
+    }
+}

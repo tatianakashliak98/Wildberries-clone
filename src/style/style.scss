@@ -1,0 +1,61 @@
+$primary-color: rgb(100, 17, 123);
+$font-face: 'Montserrat Alternates', sans-serif;
+$linear-gradient: linear-gradient(90deg, rgb(170, 99, 201), rgb(65, 10, 80));
+$wh-color: #fff;
+
+body, html {
+  overflow-x: hidden;
+}
+
+body {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  font-family: $font-face;
+  min-height: 100vh;
+  color: $primary-color;
+
+  &::before {
+    content: "";
+    z-index: -1;
+    background-color: #ffffff1e;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: url(/src/style/img/4.jpg) no-repeat center center;
+    background-image: url(/src/style/img/4.jpg);
+    background-size: cover;
+  }
+
+  &::after {
+    content: '';
+    position: fixed;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.119);
+  }
+}
+
+
+.wrapper {
+  margin: 0 auto;
+  max-width: 90%;
+  position: relative;
+}
+
+button {
+  cursor: pointer;
+}
+
+@import "_reset.scss";
+@import "_header.scss";
+@import "_swiper.scss";
+@import "_card.scss";
+@import '_basket_modal.scss';
