@@ -59,10 +59,6 @@ export { basketModal };
 export function closeBasketModal({ target }) {
   if (target === basketBtnClose || target === basketModal) {
     basketModal.style.display = "none";
-<<<<<<< HEAD:src/basket.js
-    body.style.overflow-y = "scroll";
-=======
->>>>>>> develop:src/script/basket.js
   }
 }
 
@@ -88,12 +84,9 @@ export function addToBasket({target}) {
     createCard();
     calcPriceAndCount();
     saveToLS();
-<<<<<<< HEAD:src/basket.js
-  } else if (target.className === "btn-basket-ok") {
-=======
     showNotification('Товар добавлен в корзину')
-  } else if (e.target.className === "btn-basket-ok") {
->>>>>>> develop:src/script/basket.js
+  } else if (target.className === "btn-basket-ok") {
+
     let imgSrc = card.querySelector(".product-img").src;
     const index = basket.findIndex(function (item) {
       return item.imageSrc == imgSrc;
@@ -199,9 +192,6 @@ function getBasket() {
   }
 }
 
-<<<<<<< HEAD:src/basket.js
-getBasket();
-=======
 function showNotification(inner) {
 
   let notification = document.createElement('div');
@@ -213,4 +203,4 @@ function showNotification(inner) {
 }
 
 getBasket();
->>>>>>> develop:src/script/basket.js
+
